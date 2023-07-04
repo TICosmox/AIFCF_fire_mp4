@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:intl/intl.dart';
 // ignore: depend_on_referenced_packages
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -61,7 +60,7 @@ Future<bool> savePath({String? path, required File filePath}) async {
 }
 
 bool isThemeModeLight(BuildContext context) {
-  return Theme.of(context).textTheme.bodyText1!.color ==
+  return Theme.of(context).textTheme.bodyLarge!.color ==
       const Color(0xFF182023);
 }
 

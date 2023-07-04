@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_reproductor_video/pages/videos_disponibles/videos_disponibles_page.dart';
+import 'package:proyecto_reproductor_video/pages/videos_pendientes/videos_pendientes_page.dart';
 import 'package:proyecto_reproductor_video/pages/videos_vistos/videos_vistos_page.dart';
 
 class PanelInicialPage extends StatefulWidget {
@@ -13,11 +14,11 @@ class _PanelInicialPageState extends State<PanelInicialPage> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-        length: 2,
+        length: 3,
         child: Scaffold(
           bottomNavigationBar: menu(),
           body: const TabBarView(
-            children: [VideosDisponoblesPage(), VideosVistosPage()],
+            children: [VideosDisponoblesPage(), VideosVistosPage(), VideosPendientesPage()],
           ),
         ),
       );
@@ -32,16 +33,22 @@ class _PanelInicialPageState extends State<PanelInicialPage> {
         indicatorSize: TabBarIndicatorSize.tab,
         indicatorPadding: EdgeInsets.all(5.0),
         indicatorColor: Colors.blue,
+        
         tabs: [
           Tab(
-            text: "Cursos Disponibles",
-            icon: Icon(Icons.euro_symbol),
+            text: "Todos los vídeos",
+            icon: Icon(Icons.movie_filter_outlined),
           ),
           Tab(
-            text: "Cursos Tomados",
-            icon: Icon(Icons.assignment),
-          )
+            text: "Vídeos completados",
+            icon: Icon(Icons.movie_edit),
+          ),
+          Tab(
+            text: "Vídeos Sin empezar",
+            icon: Icon(Icons.movie_rounded),
+          ), 
         ],
+
       ),
     );
   }

@@ -6,7 +6,6 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 // ignore: depend_on_referenced_packages
 import 'package:meta/meta.dart';
-import 'package:proyecto_reproductor_video/api/valida_pagina_inicial/valida_pagina_inicial_api.dart';
 
 import '../../providers/local_storage_provider.dart';
 part 'validacion_pagina_inicial_event.dart';

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../models/movieModel/netflixContentModel.dart';
 
 class VideosDisponoblesPage extends StatefulWidget {
   const VideosDisponoblesPage({super.key});
@@ -13,7 +12,7 @@ class _VideosDisponoblesPageState extends State<VideosDisponoblesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.blue,
       extendBodyBehindAppBar: true,
       extendBody: true,
       appBar: AppBar(
@@ -21,13 +20,13 @@ class _VideosDisponoblesPageState extends State<VideosDisponoblesPage> {
           onPressed: () {},
           icon: const Icon(Icons.menu),
         ),
-        title: const Text('KindaCode.com'),
+        title: Image.asset('assets/images/logo_aifcf.png', fit: BoxFit.contain, height: 60,),
         backgroundColor: Colors.transparent,
         elevation: 0,
         actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.add))],
       ),
+
       body: Stack(
-        
         children: [
           ListView(
             children: [
@@ -40,20 +39,20 @@ class _VideosDisponoblesPageState extends State<VideosDisponoblesPage> {
                   itemBuilder: (BuildContext context, int index) {
                     return Container(
                       width: 100,
-                      margin: EdgeInsets.all(8),
+                      margin: const EdgeInsets.all(8),
                       color: Colors.red,
                       child: Center(
                         child: Text(
-                          'Item $index',
-                          style: TextStyle(color: Colors.white),
+                          'Video $index',
+                          style: const TextStyle(color: Colors.white),
                         ),
                       ),
                     );
                   },
                 ),
               ),
-              const SizedBox(
-                  height: 50), // Espacio para dejar lugar a la lista horizontal
+              const SizedBox(height: 50), // Espacio para dejar lugar a la lista horizontal
+              
               Container(
                 height: 100,
                 color: Colors.grey,
@@ -67,7 +66,7 @@ class _VideosDisponoblesPageState extends State<VideosDisponoblesPage> {
                       color: Colors.blue,
                       child: Center(
                         child: Text(
-                          'Item $index',
+                          'Video $index',
                           style: TextStyle(color: Colors.white),
                         ),
                       ),
@@ -75,8 +74,8 @@ class _VideosDisponoblesPageState extends State<VideosDisponoblesPage> {
                   },
                 ),
               ),
-              const SizedBox(
-                  height: 50), // Espacio para dejar lugar a la lista horizontal
+              const SizedBox(height: 50), // Espacio para dejar lugar a la lista horizontal
+              
               Container(
                 height: 100,
                 color: Colors.grey,
@@ -90,7 +89,7 @@ class _VideosDisponoblesPageState extends State<VideosDisponoblesPage> {
                       color: Colors.red,
                       child: Center(
                         child: Text(
-                          'Item $index',
+                          'Video $index',
                           style: TextStyle(color: Colors.white),
                         ),
                       ),
@@ -98,8 +97,8 @@ class _VideosDisponoblesPageState extends State<VideosDisponoblesPage> {
                   },
                 ),
               ),
-              SizedBox(
-                  height: 50), // Espacio para dejar lugar a la lista horizontal
+              SizedBox(height: 50), // Espacio para dejar lugar a la lista horizontal
+              
               Container(
                 height: 100,
                 color: Colors.grey,
@@ -113,30 +112,7 @@ class _VideosDisponoblesPageState extends State<VideosDisponoblesPage> {
                       color: Colors.blue,
                       child: Center(
                         child: Text(
-                          'Item $index',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    );
-                  },
-                ),
-              ),
-              SizedBox(
-                  height: 50), // Espacio para dejar lugar a la lista horizontal
-              Container(
-                height: 100,
-                color: Colors.grey,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 100,
-                  itemBuilder: (BuildContext context, int index) {
-                    return Container(
-                      width: 100,
-                      margin: EdgeInsets.all(8),
-                      color: Colors.red,
-                      child: Center(
-                        child: Text(
-                          'Item $index',
+                          'Video $index',
                           style: TextStyle(color: Colors.white),
                         ),
                       ),
@@ -145,8 +121,30 @@ class _VideosDisponoblesPageState extends State<VideosDisponoblesPage> {
                 ),
               ),
 
-              SizedBox(
-                  height: 50), // Espacio para dejar lugar a la lista horizontal
+              SizedBox(height: 50), // Espacio para dejar lugar a la lista horizontal
+              Container(
+                height: 100,
+                color: Colors.grey,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 100,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Container(
+                      width: 100,
+                      margin: EdgeInsets.all(8),
+                      color: Colors.red,
+                      child: Center(
+                        child: Text(
+                          'Video $index',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+
+              SizedBox(height: 50), // Espacio para dejar lugar a la lista horizontal
               Container(
                 height: 100,
                 color: Colors.grey,
@@ -168,8 +166,7 @@ class _VideosDisponoblesPageState extends State<VideosDisponoblesPage> {
                   },
                 ),
               ),
-              SizedBox(
-                  height: 50), // Espacio para dejar lugar a la lista horizontal
+              SizedBox(height: 50), // Espacio para dejar lugar a la lista horizontal
               Container(
                 height: 100,
                 color: Colors.grey,

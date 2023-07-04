@@ -12,7 +12,7 @@ class _VideosVistosPageState extends State<VideosVistosPage> {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text("Videos vistos"),
+        child: Text("Completados"),
       ),
     );
   }

@@ -3,3 +3,4 @@ const String validacioninicial = 'validacioninicial';
 const String panelinicial = 'panelinicial';
 const String videosdisponibles = 'videosdisponibles';
 const String videosvistos = 'videosvistos';
+const String videospendientes = 'videospendientes';
