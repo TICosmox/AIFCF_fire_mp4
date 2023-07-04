@@ -18,7 +18,7 @@ class _PanelInicialPageState extends State<PanelInicialPage> {
         child: Scaffold(
           bottomNavigationBar: menu(),
           body: const TabBarView(
-            children: [VideosDisponoblesPage(), VideosVistosPage(), VideosPendientesPage()],
+            children: [VideosDisponoblesPage(), VideosPendientesPage(), VideosVistosPage()],
           ),
         ),
       );
@@ -40,13 +40,14 @@ class _PanelInicialPageState extends State<PanelInicialPage> {
             icon: Icon(Icons.movie_filter_outlined),
           ),
           Tab(
-            text: "Vídeos completados",
-            icon: Icon(Icons.movie_edit),
-          ),
-          Tab(
             text: "Vídeos Sin empezar",
             icon: Icon(Icons.movie_rounded),
           ), 
+          Tab(
+            text: "Vídeos completados",
+            icon: Icon(Icons.movie_edit),
+          ),
+
         ],
 
       ),

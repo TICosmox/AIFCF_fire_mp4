@@ -11,6 +11,17 @@ class _VideosPendientesPage extends State<VideosPendientesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blue,
+      appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {},
+          icon: const Icon(Icons.menu),
+        ),
+        title: Image.asset('assets/images/logo_aifcf.png', fit: BoxFit.contain, height: 60,),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.add))],
+      ),
       body: ListView.builder(
         itemCount: 1,
         itemBuilder: (BuildContext context, int index) {
@@ -25,7 +36,7 @@ class _VideosPendientesPage extends State<VideosPendientesPage> {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
-        Text('Carousel $carouselIndex'),
+        Text('Videos sin empezar $carouselIndex'),
         SizedBox(
           // you may want to use an aspect ratio here for tablet support
           height: 400,
