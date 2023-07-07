@@ -4,3 +4,4 @@ const String panelinicial = 'panelinicial';
 const String videosdisponibles = 'videosdisponibles';
 const String videosvistos = 'videosvistos';
 const String videospendientes = 'videospendientes';
+const String detallevideo = 'detallevideo';

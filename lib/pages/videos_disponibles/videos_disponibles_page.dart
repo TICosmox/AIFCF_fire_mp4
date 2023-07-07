@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proyecto_reproductor_video/constants/rutas_de_paginas.dart';
 
 class VideosDisponoblesPage extends StatefulWidget {
   const VideosDisponoblesPage({super.key});
@@ -54,31 +55,36 @@ class _VideosDisponoblesPageState extends State<VideosDisponoblesPage> {
               physics: NeverScrollableScrollPhysics(),
               itemCount: 10,
               itemBuilder: (context, index) {
-                return Container(
-                  margin: EdgeInsets.all(16),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Expanded(
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(10),
-                          child: Image.asset(
-                            "assets/images/logo.jpg",
-                            // popularShows[index].imageUrl,
-                            fit: BoxFit.cover,
+                return InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, detallevideo);
+                  },
+                  child: Container(
+                    margin: EdgeInsets.all(16),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Expanded(
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: Image.asset(
+                              "assets/images/logo.jpg",
+                              // popularShows[index].imageUrl,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
-                      ),
-                      SizedBox(height: 8),
-                      Text(
-                        "Titulo del curso",
-                        // popularShows[index].title,
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
+                        SizedBox(height: 8),
+                        Text(
+                          "Titulo del curso",
+                          // popularShows[index].title,
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 );
               })

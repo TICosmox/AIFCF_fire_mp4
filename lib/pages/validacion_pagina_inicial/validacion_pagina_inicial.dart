@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:proyecto_reproductor_video/blocs/validation_bloc/validation_bloc.dart';
+import 'package:proyecto_reproductor_video/constants/rutas_de_paginas.dart';
 
 import '../../blocs/valida_pagina_inicial/validacion_pagina_inicial_bloc.dart';
 import '../../utils/functions_utils.dart';
@@ -24,7 +25,7 @@ class _ValidationUserPageState extends State<ValidationUserPage> {
         listener: (BuildContext _, ValidacionPaginaInicialState state) {
           if(state.react == REACT_VALIDACION_PAGINA_INICIAL.success){
              Navigator.pushNamedAndRemoveUntil(
-            context, 'panelinicial', (Route<dynamic> route) => false);
+            context, panelinicial, (Route<dynamic> route) => false);
           }
           else{
              showAlert(context, "Error", TYPE_ALERT.error);
@@ -49,7 +50,7 @@ class _ValidationUserPageState extends State<ValidationUserPage> {
         listener: (_, stValidation) {
       if (stValidation is ValidationLogin) {
         Navigator.pushNamedAndRemoveUntil(
-            context, 'panelinicial', (Route<dynamic> route) => false);
+            context, panelinicial, (Route<dynamic> route) => false);
       }
     }, builder: (BuildContext context, ValidationState stValidation) {
       return Container(
