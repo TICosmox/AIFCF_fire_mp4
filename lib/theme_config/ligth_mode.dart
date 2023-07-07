@@ -4,14 +4,9 @@ import '../utils/SizeConfig.dart';
 ThemeData themeModeLight() {
   return ThemeData(
     fontFamily: 'Lato',
-    colorScheme: const ColorScheme.light().copyWith(
-      primary: Colors.blue[900],
-      secondary: const Color.fromARGB(255, 80, 106, 199),
-    ),
     primaryColorLight: const Color(0xFF14273F),
     scaffoldBackgroundColor: const Color(0xFFF1F3FF),
     dividerColor: const Color(0xFFD9E2E9),
-    backgroundColor: const Color(0xFFF7F9FF),
 
     textTheme: const TextTheme(
       titleMedium: TextStyle(color: Color.fromARGB(255, 13, 71, 161)),
@@ -108,7 +103,10 @@ ThemeData themeModeLight() {
       iconColor: Color.fromARGB(255, 5, 47, 173),
       minLeadingWidth: 2,
     //  minVerticalPadding: 15,
-    ),
+    ), colorScheme: const ColorScheme.light().copyWith(
+      primary: Colors.blue[900],
+      secondary: const Color.fromARGB(255, 80, 106, 199),
+    ).copyWith(background: const Color(0xFFF7F9FF)),
 
   );
 }

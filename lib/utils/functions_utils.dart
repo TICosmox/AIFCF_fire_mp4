@@ -31,9 +31,9 @@ Future sharedFiles({
     if (isSave) {
       Directory documentDirectory = await getApplicationDocumentsDirectory();
       String documentPath = documentDirectory.path;
-      final String _path = '$documentPath/$name$ext';
+      final String path0 = '$documentPath/$name$ext';
       final RenderBox box = context.findRenderObject() as RenderBox;
-      Share.shareFiles([_path],
+      Share.shareFiles([path0],
         subject: name,
         text: 'Mi nuevo $name',
         sharePositionOrigin: box.localToGlobal(Offset.zero) & box.size);
