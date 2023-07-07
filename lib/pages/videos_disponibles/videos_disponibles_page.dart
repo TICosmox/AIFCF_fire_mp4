@@ -33,15 +33,10 @@ class _VideosDisponiblesPageState extends State<VideosDisponiblesPage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Popular shows section
+          // Todos los videos de cursos
           Container(
             padding: const EdgeInsets.all(16),
-            child: const Text(
-              'Todos los cursos disponibles',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
+            child: const Text( 'Todos los cursos disponibles', style: TextStyle( fontSize: 24, fontWeight: FontWeight.bold),
             ),
           ),
 
@@ -62,7 +57,7 @@ class _VideosDisponiblesPageState extends State<VideosDisponiblesPage> {
                     children: [
                       Expanded(
                         child: GestureDetector(
-                          onTap: () => Navigator.pushNamed(context, 'detallesvideo', arguments: 'nombrecurso'),
+                          onTap: () => Navigator.pushNamed(context, 'detallesvideo', arguments: 'modelocurso'),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(10),
                             child: const FadeInImage(
@@ -73,7 +68,7 @@ class _VideosDisponiblesPageState extends State<VideosDisponiblesPage> {
                           ),
                         ),
                       ),
-                      const SizedBox(height: 8),
+                      const SizedBox(height: 5),
                       const Text( "Titulo del curso", style: TextStyle( fontSize: 16, fontWeight: FontWeight.bold)),
                     ],
                   ),
