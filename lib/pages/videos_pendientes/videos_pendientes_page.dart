@@ -44,7 +44,7 @@ class _VideosPendientesPage extends State<VideosPendientesPage> {
             ),
           ),
           // Horizontal list of featured content
-          Container(
+          SizedBox(
             height: 200,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,

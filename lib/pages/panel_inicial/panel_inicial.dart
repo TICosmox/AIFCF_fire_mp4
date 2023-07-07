@@ -20,7 +20,7 @@ class _PanelInicialPageState extends State<PanelInicialPage> {
         child: Scaffold(
           bottomNavigationBar: menu(),
           body: const TabBarView(
-            children: [ RegistroPage(), VideosDisponoblesPage(), VideosPendientesPage()],
+            children: [ RegistroPage(), VideosDisponiblesPage(), VideosPendientesPage()],
           ),
         ),
       );
