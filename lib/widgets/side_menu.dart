@@ -36,6 +36,13 @@ class SideMenu extends StatelessWidget {
               
             }
           ),
+          ListTile(
+            leading: const Icon(Icons.person_outline_outlined),
+            title: const Text('Perfil'),
+            onTap: () {
+              
+            }
+          ),
 
         ],
       ),
