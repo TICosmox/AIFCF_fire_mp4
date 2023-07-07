@@ -69,10 +69,7 @@ class _VideosPendientesPage extends State<VideosPendientesPage> {
           // Videos sin empezar
           Container(
             padding: const EdgeInsets.all(16),
-            child: const Text(
-              'Sin Empezar',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
+            child: const Text('Sin Empezar', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
           ),
 
           GridView.builder(
@@ -83,6 +80,7 @@ class _VideosPendientesPage extends State<VideosPendientesPage> {
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             itemCount: 10,
+
             itemBuilder: (context, index) {
               return Container(
                 margin: const EdgeInsets.all(16),
@@ -102,16 +100,13 @@ class _VideosPendientesPage extends State<VideosPendientesPage> {
                         ),
                       ),
                     ),
-                    const SizedBox(height: 8),
-                    const Text(
-                      "Titulo del curso",
-                      // popularShows[index].title,
-                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                    ),
+                    const SizedBox(height: 5),
+                    const Text( "Titulo del curso", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
                   ],
                 ),
               );
             }
+
           )
         ],
       ),
