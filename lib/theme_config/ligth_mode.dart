@@ -6,7 +6,7 @@ ThemeData themeModeLight() {
     fontFamily: 'Lato',
     colorScheme: const ColorScheme.light().copyWith(
       primary: Colors.blue[900],
-      secondary: Color.fromARGB(255, 80, 106, 199),
+      secondary: const Color.fromARGB(255, 80, 106, 199),
     ),
     primaryColorLight: const Color(0xFF14273F),
     scaffoldBackgroundColor: const Color(0xFFF1F3FF),
