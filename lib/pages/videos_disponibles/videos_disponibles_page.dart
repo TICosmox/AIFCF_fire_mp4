@@ -61,12 +61,15 @@ class _VideosDisponiblesPageState extends State<VideosDisponiblesPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Expanded(
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(10),
-                          child: const FadeInImage(
-                            placeholder: AssetImage('assets/images/novideo.png'),
-                            image: NetworkImage('https://via.placeholder.com/200x200'),
-                            fit: BoxFit.cover, 
+                        child: GestureDetector(
+                          onTap: () => Navigator.pushNamed(context, 'detallesvideo', arguments: 'nombrecurso'),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: const FadeInImage(
+                              placeholder: AssetImage('assets/images/novideo.png'),
+                              image: NetworkImage('https://via.placeholder.com/200x200'),
+                              fit: BoxFit.cover, 
+                            ),
                           ),
                         ),
                       ),

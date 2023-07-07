@@ -50,12 +50,15 @@ class _VideosPendientesPage extends State<VideosPendientesPage> {
                 return Container(
                   margin: const EdgeInsets.all(8),
                   width: 150,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(8),
-                    child: const FadeInImage(
-                      placeholder: AssetImage("assets/images/logo.jpg"),
-                      image: NetworkImage('https://via.placeholder.com/100x100'),
-                      fit: BoxFit.cover,
+                  child: GestureDetector(
+                    onTap: () => Navigator.pushNamed(context, 'detallesvideo', arguments: 'nombrecurso'),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(8),
+                      child: const FadeInImage(
+                        placeholder: AssetImage("assets/images/logo.jpg"),
+                        image: NetworkImage('https://via.placeholder.com/100x100'),
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 );
@@ -87,12 +90,15 @@ class _VideosPendientesPage extends State<VideosPendientesPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Expanded(
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(10),
-                        child: const FadeInImage(
-                          placeholder: AssetImage('assets/images/novideo.png'),
-                          image: NetworkImage('https://via.placeholder.com/200x200'),
-                          fit: BoxFit.cover, 
+                      child: GestureDetector(
+                          onTap: () => Navigator.pushNamed(context, 'detallesvideo', arguments: 'nombrecurso'),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: const FadeInImage(
+                            placeholder: AssetImage('assets/images/novideo.png'),
+                            image: NetworkImage('https://via.placeholder.com/200x200'),
+                            fit: BoxFit.cover, 
+                          ),
                         ),
                       ),
                     ),

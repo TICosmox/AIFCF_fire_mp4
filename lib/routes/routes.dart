@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proyecto_reproductor_video/pages/detalle_video/detalle_video_page.dart';
 import 'package:proyecto_reproductor_video/pages/panel_inicial/panel_inicial.dart';
 import 'package:proyecto_reproductor_video/pages/registro/registro_page.dart';
 import 'package:proyecto_reproductor_video/pages/videos_disponibles/videos_disponibles_page.dart';
@@ -14,6 +15,7 @@ Map<String, WidgetBuilder> getApplicationRoutes() {
      validacioninicial: (BuildContext context) => const ValidationUserPage(),
      videosdisponibles: (BuildContext context) => const VideosDisponiblesPage(),
      videospendientes: (BuildContext context) => const VideosPendientesPage(),
+     detallesvideos: (BuildContext context) => const DetallesVideoPage(),
      registro:(BuildContext context) => const RegistroPage(),
      // 'terminos': (BuildContext context) => TerminosPage(visible: true),
   };
