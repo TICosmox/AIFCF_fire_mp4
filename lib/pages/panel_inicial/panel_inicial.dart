@@ -11,14 +11,16 @@ class PanelInicialPage extends StatefulWidget {
 }
 
 class _PanelInicialPageState extends State<PanelInicialPage> {
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
+        initialIndex: 1,
         length: 3,
         child: Scaffold(
           bottomNavigationBar: menu(),
           body: const TabBarView(
-            children: [VideosDisponoblesPage(), VideosPendientesPage(), RegistroPage(),],
+            children: [ RegistroPage(), VideosDisponoblesPage(), VideosPendientesPage()],
           ),
         ),
       );
@@ -36,6 +38,10 @@ class _PanelInicialPageState extends State<PanelInicialPage> {
         
         tabs: [
           Tab(
+            text: "Inicio",
+            icon: Icon(Icons.home),
+          ),
+          Tab(
             text: "Todos los vídeos",
             icon: Icon(Icons.movie_filter_outlined),
           ),
@@ -43,10 +49,7 @@ class _PanelInicialPageState extends State<PanelInicialPage> {
             text: "Avances",
             icon: Icon(Icons.movie_rounded),
           ),
-          Tab(
-            text: "Inicio",
-            icon: Icon(Icons.home),
-          ),
+
         ],
 
       ),

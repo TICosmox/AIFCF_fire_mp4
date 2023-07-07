@@ -9,19 +9,15 @@ class LocalStorage {
     _local = await SharedPreferences.getInstance();
   }
 
-
-
   String get rutamenu => _local.getString('rutamenu') ?? '';
   String get sistemaOperativo => _local.getString('sistemaOperativo') ?? '';
   String get userToken => _local.getString('userToken') ?? '';
-
-  
 
   set rutamenu(String value) => _local.setString('rutamenu', value);
   set sistemaOperativo(String value) => _local.setString('sistemaOperativo', value);
   set userToken(String value) => _local.setString('userToken', value);
 
-  void limiarLocalStorage() {
+  void limpiarLocalStorage() {
     rutamenu = "";
     sistemaOperativo = "";
     userToken = "";
