@@ -46,13 +46,14 @@ class _VideosDisponiblesPageState extends State<VideosDisponiblesPage> {
           ),
 
           GridView.builder(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 4,
-                childAspectRatio: 0.7,
-              ),
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              itemCount: 10,
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 4,
+              childAspectRatio: 0.8,
+            ),
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: 10,
+              
               itemBuilder: (context, index) {
                 return Container(
                   margin: const EdgeInsets.all(16),
@@ -62,26 +63,20 @@ class _VideosDisponiblesPageState extends State<VideosDisponiblesPage> {
                       Expanded(
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(10),
-                          child: Image.asset(
-                            "assets/images/logo.jpg",
-                            // popularShows[index].imageUrl,
-                            fit: BoxFit.cover,
+                          child: const FadeInImage(
+                            placeholder: AssetImage('assets/images/novideo.png'),
+                            image: NetworkImage('https://via.placeholder.com/200x200'),
+                            fit: BoxFit.cover, 
                           ),
                         ),
                       ),
                       const SizedBox(height: 8),
-                      const Text(
-                        "Titulo del curso",
-                        // popularShows[index].title,
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
+                      const Text( "Titulo del curso", style: TextStyle( fontSize: 16, fontWeight: FontWeight.bold)),
                     ],
                   ),
                 );
-              })
+              }
+          )
         ],
       ),
     );

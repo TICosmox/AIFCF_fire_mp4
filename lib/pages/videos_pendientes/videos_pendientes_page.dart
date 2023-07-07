@@ -37,10 +37,7 @@ class _VideosPendientesPage extends State<VideosPendientesPage> {
             padding: const EdgeInsets.all(16),
             child: const Text(
               "Concluidos",
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
+              style: TextStyle( fontSize: 24, fontWeight: FontWeight.bold),
             ),
           ),
           // Horizontal list of featured content
@@ -53,10 +50,11 @@ class _VideosPendientesPage extends State<VideosPendientesPage> {
                 return Container(
                   margin: const EdgeInsets.all(8),
                   width: 150,
-                  decoration: BoxDecoration(
+                  child: ClipRRect(
                     borderRadius: BorderRadius.circular(8),
-                    image: const DecorationImage(
-                      image: AssetImage("assets/images/logo.jpg"),
+                    child: const FadeInImage(
+                      placeholder: AssetImage("assets/images/logo.jpg"),
+                      image: NetworkImage('https://via.placeholder.com/100x100'),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -65,55 +63,50 @@ class _VideosPendientesPage extends State<VideosPendientesPage> {
             ),
           ),
 
-          // Popular shows section
+          // Videos sin empezar
           Container(
             padding: const EdgeInsets.all(16),
             child: const Text(
               'Sin Empezar',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
           ),
 
           GridView.builder(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 4,
-                childAspectRatio: 0.7,
-              ),
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              itemCount: 10,
-              itemBuilder: (context, index) {
-                return Container(
-                  margin: const EdgeInsets.all(16),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Expanded(
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(10),
-                          child: Image.asset(
-                            "assets/images/logo.jpg",
-                            // popularShows[index].imageUrl,
-                            fit: BoxFit.cover,
-                          ),
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 4,
+              childAspectRatio: 0.8,
+            ),
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: 10,
+            itemBuilder: (context, index) {
+              return Container(
+                margin: const EdgeInsets.all(16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10),
+                        child: const FadeInImage(
+                          placeholder: AssetImage('assets/images/novideo.png'),
+                          image: NetworkImage('https://via.placeholder.com/200x200'),
+                          fit: BoxFit.cover, 
                         ),
                       ),
-                      const SizedBox(height: 8),
-                      const Text(
-                        "Titulo del curso",
-                        // popularShows[index].title,
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
-                  ),
-                );
-              })
+                    ),
+                    const SizedBox(height: 8),
+                    const Text(
+                      "Titulo del curso",
+                      // popularShows[index].title,
+                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              );
+            }
+          )
         ],
       ),
     );
