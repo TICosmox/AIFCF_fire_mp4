@@ -8,12 +8,14 @@ import '../constants/rutas_de_paginas.dart';
 import '../pages/validacion_pagina_inicial/validacion_pagina_inicial.dart';
 
 Map<String, WidgetBuilder> getApplicationRoutes() {
+
   return <String, WidgetBuilder>{
-     validacioninicial: (BuildContext context) => const ValidationUserPage(),
      panelinicial: (BuildContext context) => const PanelInicialPage(),
+     validacioninicial: (BuildContext context) => const ValidationUserPage(),
      videosdisponibles: (BuildContext context) => const VideosDisponoblesPage(),
      videosvistos: (BuildContext context) => const VideosVistosPage(),
-     videospendientes: (BuildContext context) => const VideosPendientesPage()
+     videospendientes: (BuildContext context) => const VideosPendientesPage(),
+     // registro: (BuildContext context) => const RegistroPage(),
      // 'terminos': (BuildContext context) => TerminosPage(visible: true),
   };
 }

@@ -34,8 +34,8 @@ class _VideosPendientesPage extends State<VideosPendientesPage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            padding: EdgeInsets.all(16),
-            child: Text(
+            padding: const EdgeInsets.all(16),
+            child: const Text(
               "Concluidos",
               style: TextStyle(
                 fontSize: 24,
@@ -51,11 +51,11 @@ class _VideosPendientesPage extends State<VideosPendientesPage> {
               itemCount: 10,
               itemBuilder: (context, index) {
                 return Container(
-                  margin: EdgeInsets.all(8),
+                  margin: const EdgeInsets.all(8),
                   width: 150,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),
-                    image: DecorationImage(
+                    image: const DecorationImage(
                       image: AssetImage("assets/images/logo.jpg"),
                       fit: BoxFit.cover,
                     ),
@@ -67,8 +67,8 @@ class _VideosPendientesPage extends State<VideosPendientesPage> {
 
           // Popular shows section
           Container(
-            padding: EdgeInsets.all(16),
-            child: Text(
+            padding: const EdgeInsets.all(16),
+            child: const Text(
               'Sin Empezar',
               style: TextStyle(
                 fontSize: 24,
@@ -78,16 +78,16 @@ class _VideosPendientesPage extends State<VideosPendientesPage> {
           ),
 
           GridView.builder(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 4,
                 childAspectRatio: 0.7,
               ),
               shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               itemCount: 10,
               itemBuilder: (context, index) {
                 return Container(
-                  margin: EdgeInsets.all(16),
+                  margin: const EdgeInsets.all(16),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -101,8 +101,8 @@ class _VideosPendientesPage extends State<VideosPendientesPage> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 8),
-                      Text(
+                      const SizedBox(height: 8),
+                      const Text(
                         "Titulo del curso",
                         // popularShows[index].title,
                         style: TextStyle(

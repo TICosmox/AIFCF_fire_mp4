@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:provider/provider.dart';
+import 'package:proyecto_reproductor_video/pages/registro/registro_page.dart';
 import 'package:proyecto_reproductor_video/pages/validacion_pagina_inicial/validacion_pagina_inicial.dart';
 import 'package:proyecto_reproductor_video/providers/list_bloc_provider.dart';
 import 'package:proyecto_reproductor_video/providers/local_storage_provider.dart';
@@ -55,7 +56,7 @@ class InitApp extends StatelessWidget {
     );
   }
 }
-
+ 
 class MaterialAppWithTheme extends StatefulWidget {
   final List<BlocProvider>? blocInitialized;
 
@@ -68,8 +69,7 @@ class MaterialAppWithTheme extends StatefulWidget {
 
 class _MaterialAppWithThemeState extends State<MaterialAppWithTheme> {
   final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
-  final GlobalKey<ScaffoldMessengerState> messengerrKey =
-      GlobalKey<ScaffoldMessengerState>();
+  final GlobalKey<ScaffoldMessengerState> messengerrKey = GlobalKey<ScaffoldMessengerState>();
 
   @override
   void initState() {
@@ -121,7 +121,7 @@ class _MaterialAppWithThemeState extends State<MaterialAppWithTheme> {
         navigatorKey: navigatorKey, //Navegar
         scaffoldMessengerKey: messengerrKey, //Snacks
         themeMode: ThemeMode.light,
-        home: const ValidationUserPage(),
+        home: const RegistroPage(),
         routes: getApplicationRoutes(),
       ),
     );

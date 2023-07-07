@@ -27,7 +27,7 @@ class _ValidationUserPageState extends State<ValidationUserPage> {
             context, 'panelinicial', (Route<dynamic> route) => false);
           }
           else{
-             showAlert(context, "Error", TYPE_ALERT.error);
+            showAlert(context, "Error", TYPE_ALERT.error);
           }
         },
         builder: (BuildContext _, ValidacionPaginaInicialState state) => !isUpdate

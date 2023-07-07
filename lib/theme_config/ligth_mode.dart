@@ -1,19 +1,12 @@
-// ignore_for_file: deprecated_member_use
-
 import 'package:flutter/material.dart';
-import 'package:proyecto_reproductor_video/theme_config/theme.dart';
-
 import '../utils/SizeConfig.dart';
-// import 'package:google_fonts/google_fonts.dart';
 
 ThemeData themeModeLight() {
   return ThemeData(
     fontFamily: 'Lato',
     colorScheme: const ColorScheme.light().copyWith(
-      primary: const Color(0xFF15a251),
-      primaryVariant: const Color(0xFF3e4a94),
-      secondary: const Color(0xFF94c750),
-      secondaryVariant: const Color(0xFF064857),
+      primary: Colors.blue[900],
+      secondary: Color.fromARGB(255, 80, 106, 199),
     ),
     primaryColorLight: const Color(0xFF14273F),
     scaffoldBackgroundColor: const Color(0xFFF1F3FF),
@@ -21,18 +14,41 @@ ThemeData themeModeLight() {
     backgroundColor: const Color(0xFFF7F9FF),
 
     textTheme: const TextTheme(
-      subtitle1: TextStyle(color: Color.fromRGBO(59, 173, 18, 1)),
-      subtitle2: TextStyle(color: Colors.red),
+      titleMedium: TextStyle(color: Color.fromARGB(255, 13, 71, 161)),
+      titleSmall: TextStyle(color: Colors.red),
       //bodyText1: TextStyle(color: Color.fromARGB(255, 90, 167, 3), fontFamily: 'Hind')
-      bodyText1: TextStyle(color: Color.fromARGB(255, 38, 71, 0), fontFamily: 'Hind')
+      bodyLarge: TextStyle(color: Color.fromARGB(255, 38, 71, 0), fontFamily: 'Hind')
     ),
+
+    inputDecorationTheme: InputDecorationTheme(
+      
+      prefixIconColor: Colors.blue[900],
+      iconColor: Colors.blue[900],
+      hintStyle: const TextStyle(color: Color.fromARGB(255, 81, 93, 206)),
+      labelStyle: TextStyle(color: Colors.blue[900]),
+      floatingLabelStyle: TextStyle(color: Colors.blue[900]),
+      fillColor: Colors.white,
+      filled: true,
+      enabledBorder: const OutlineInputBorder(
+        borderRadius: BorderRadius.all(Radius.circular(10)),
+        borderSide: BorderSide(color: Colors.white)
+      ),
+      focusedBorder: const OutlineInputBorder(
+        borderRadius: BorderRadius.all(Radius.circular(10)),
+        borderSide: BorderSide(color: Colors.blue),
+      ),
+      border: const OutlineInputBorder(
+        borderRadius: BorderRadius.all(Radius.circular(10)),
+      )
+    ),
+
     
     appBarTheme: AppBarTheme(
-      backgroundColor: getColorGreen(),
+      backgroundColor: Colors.blue[900],
       centerTitle: true,
       titleTextStyle: TextStyle(
         color: Colors.white,
-        fontSize: SizeConfig.blockSizeVertical < 3.84 ? 10 : 14,
+        fontSize: SizeConfig.blockSizeVertical < 3.84 ? 10 : 20,
         fontWeight: FontWeight.bold),
       elevation: 0,
       shadowColor: const Color(0xFFBDBDBD),
@@ -44,11 +60,10 @@ ThemeData themeModeLight() {
 
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: const Color(0xFFF7F9FF),
-      unselectedIconTheme:
-          IconThemeData(color: Colors.green[200], opacity: 1.0, size: 25),
+      unselectedIconTheme: IconThemeData(color: Colors.blue[200], opacity: 1.0, size: 25),
       unselectedLabelStyle: const TextStyle(color: Color(0xff3d3d3d)),
       selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
-      selectedItemColor: Colors.green[900],
+      selectedItemColor: Colors.blue[900],
       selectedIconTheme:
           const IconThemeData(color: Color(0xFF15a251), opacity: 1.0, size: 30),
     ),
@@ -57,34 +72,15 @@ ThemeData themeModeLight() {
       materialTapTargetSize: MaterialTapTargetSize.padded
     ),
 
-    inputDecorationTheme: const InputDecorationTheme(
-      prefixIconColor: Color(0xFF94c750),
-      iconColor: Color(0xFF94c750),
-      hintStyle: TextStyle(color: Color(0xffA6B0BD)),
-      labelStyle: TextStyle(color: Color.fromRGBO(66, 66, 66, 1)),
-      fillColor: Colors.white,
-      filled: true,
-      enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.all(Radius.circular(10)),
-        borderSide: BorderSide(color: Colors.white)
-      ),
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.all(Radius.circular(10)),
-        borderSide: BorderSide(color: Colors.white)
-      ),
-    ),
-
     snackBarTheme: const SnackBarThemeData(
-      contentTextStyle:
-          TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+      contentTextStyle: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
       behavior: SnackBarBehavior.floating,
       elevation: 50,
     ),
 
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
-        backgroundColor: Colors.green,
-        primary: Colors.white,
+        foregroundColor: Colors.white, backgroundColor: Colors.blue,
         fixedSize: const Size.fromWidth(120)
       )
     ),

@@ -35,8 +35,8 @@ class _VideosDisponoblesPageState extends State<VideosDisponoblesPage> {
         children: [
           // Popular shows section
           Container(
-            padding: EdgeInsets.all(16),
-            child: Text(
+            padding: const EdgeInsets.all(16),
+            child: const Text(
               'Todos los cursos disponibles',
               style: TextStyle(
                 fontSize: 24,
@@ -46,16 +46,16 @@ class _VideosDisponoblesPageState extends State<VideosDisponoblesPage> {
           ),
 
           GridView.builder(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 4,
                 childAspectRatio: 0.7,
               ),
               shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               itemCount: 10,
               itemBuilder: (context, index) {
                 return Container(
-                  margin: EdgeInsets.all(16),
+                  margin: const EdgeInsets.all(16),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -69,8 +69,8 @@ class _VideosDisponoblesPageState extends State<VideosDisponoblesPage> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 8),
-                      Text(
+                      const SizedBox(height: 8),
+                      const Text(
                         "Titulo del curso",
                         // popularShows[index].title,
                         style: TextStyle(

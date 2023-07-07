@@ -14,7 +14,7 @@ class VersionModel {
   bool? activo;
 
   factory VersionModel.fromJson(Map<String, dynamic> json) => VersionModel(
-        id: json["Id"] == null ? null : json["Id"],
+        id: json["Id"],
         version: json["Version"] == null ? null : json["Version"],
         so: json["So"] == null ? null : json["So"],
         url: json["Url"] == null ? null : json["Url"],

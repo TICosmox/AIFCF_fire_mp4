@@ -22,7 +22,7 @@ class _VideosVistosPageState extends State<VideosVistosPage> {
         elevation: 0,
         actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.add))],
       ),
-      body: Center(
+      body: const Center(
         child: Text("Videos Completados"),
       ),
     );

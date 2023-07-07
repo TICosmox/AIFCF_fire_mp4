@@ -1,5 +1,3 @@
-// ignore: file_names
-// ignore: file_names
 class MovieModel {
   final String posterURL;
 
