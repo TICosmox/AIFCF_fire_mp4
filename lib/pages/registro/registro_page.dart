@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../widgets/custom_imput_field.dart';
+import 'package:proyecto_reproductor_video/widgets/widgets.dart';
 
 class RegistroPage extends StatelessWidget {
   const RegistroPage({super.key});
@@ -17,8 +16,21 @@ class RegistroPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Registro de alumno'),
+        title: Image.asset(
+          'assets/images/logo_aifcf.png',
+          fit: BoxFit.contain,
+          height: 60,
+        ),
+        bottom: const PreferredSize(
+          preferredSize: Size.fromHeight(20),
+          child: Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Text('Registro del alumno', style: TextStyle(color: Colors.white)),
+          ),
+        )
       ),
+      drawer: const SideMenu(),
+
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
@@ -27,6 +39,7 @@ class RegistroPage extends StatelessWidget {
             child: Column(
               children: [
                 const SizedBox(height: 60),
+                
                 CustomInputField(
                   labelText: 'Nombre',
                   hintText: 'Intoduzca su nombre completo',

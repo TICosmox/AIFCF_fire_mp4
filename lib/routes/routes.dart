@@ -15,7 +15,6 @@ Map<String, WidgetBuilder> getApplicationRoutes() {
      videosdisponibles: (BuildContext context) => const VideosDisponoblesPage(),
      videosvistos: (BuildContext context) => const VideosVistosPage(),
      videospendientes: (BuildContext context) => const VideosPendientesPage(),
-     // registro: (BuildContext context) => const RegistroPage(),
      // 'terminos': (BuildContext context) => TerminosPage(visible: true),
   };
 }

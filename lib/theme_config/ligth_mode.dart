@@ -103,10 +103,11 @@ ThemeData themeModeLight() {
     ),
 
     listTileTheme: const ListTileThemeData(
-      contentPadding: EdgeInsets.zero,
-      textColor: Colors.green,
+    //   contentPadding: EdgeInsets.zero,
+      textColor: Color.fromARGB(255, 5, 47, 173),
+      iconColor: Color.fromARGB(255, 5, 47, 173),
       minLeadingWidth: 2,
-      minVerticalPadding: 15,
+    //  minVerticalPadding: 15,
     ),
 
   );
