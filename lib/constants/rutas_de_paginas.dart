@@ -5,3 +5,5 @@ const String videosdisponibles = 'videosdisponibles';
 const String videosvistos = 'videosvistos';
 const String videospendientes = 'videospendientes';
 const String detallevideo = 'detallevideo';
+const String reproductordevideo= 'reproductordevideo';
+const String video = 'video';
