@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proyecto_reproductor_video/pages/reproductor_video/reproductor_video_page.dart';
 
 class DetallesVideoPage extends StatelessWidget {
   const DetallesVideoPage({super.key});
@@ -6,12 +7,14 @@ class DetallesVideoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final String video = ModalRoute.of(context)?.settings.arguments.toString() ?? 'No se encontró video';
+    return const ReproductorVideo();
 
-    return Scaffold(
-      body: Center(
-        child: Text( video ),
-     ),
-   );
+  //   final String video = ModalRoute.of(context)?.settings.arguments.toString() ?? 'No se encontró video';
+  //   return Scaffold(
+  //     body: Center(
+  //       child: Text( video ),
+  //    ),
+  //  );
+
   }
 }
