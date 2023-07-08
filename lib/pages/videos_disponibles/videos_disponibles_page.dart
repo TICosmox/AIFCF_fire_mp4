@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_reproductor_video/constants/rutas_de_paginas.dart';
 
-class VideosDisponoblesPage extends StatefulWidget {
-  const VideosDisponoblesPage({super.key});
+class VideosDisponiblesPage extends StatefulWidget {
+  const VideosDisponiblesPage({super.key});
 
   @override
-  State<VideosDisponoblesPage> createState() => _VideosDisponoblesPageState();
+  State<VideosDisponiblesPage> createState() => _VideosDisponiblesPageState();
 }
 
-class _VideosDisponoblesPageState extends State<VideosDisponoblesPage> {
+class _VideosDisponiblesPageState extends State<VideosDisponiblesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,60 +34,53 @@ class _VideosDisponoblesPageState extends State<VideosDisponoblesPage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Popular shows section
+          // Todos los videos de cursos
           Container(
-            padding: EdgeInsets.all(16),
-            child: Text(
-              'Todos los cursos disponibles',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
+            padding: const EdgeInsets.all(16),
+            child: const Text( 'Todos los cursos disponibles', style: TextStyle( fontSize: 24, fontWeight: FontWeight.bold),
             ),
           ),
 
           GridView.builder(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 4,
-                childAspectRatio: 0.7,
-              ),
-              shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-              itemCount: 10,
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 4,
+              childAspectRatio: 0.8,
+            ),
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: 10,
+              
               itemBuilder: (context, index) {
                 return InkWell(
                   onTap: () {
                     Navigator.pushNamed(context, detallevideo);
                   },
                   child: Container(
-                    margin: EdgeInsets.all(16),
+                    margin: const EdgeInsets.all(16),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Expanded(
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(10),
-                            child: Image.asset(
-                              "assets/images/logo.jpg",
-                              // popularShows[index].imageUrl,
-                              fit: BoxFit.cover,
+                          child: GestureDetector(
+                            onTap: () => Navigator.pushNamed(context, 'detallesvideo', arguments: 'modelocurso'),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: const FadeInImage(
+                                placeholder: AssetImage('assets/images/novideo.png'),
+                                image: NetworkImage('https://via.placeholder.com/200x200'),
+                                fit: BoxFit.cover, 
+                              ),
                             ),
                           ),
                         ),
-                        SizedBox(height: 8),
-                        Text(
-                          "Titulo del curso",
-                          // popularShows[index].title,
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
+                        const SizedBox(height: 5),
+                        const Text( "Titulo del curso", style: TextStyle( fontSize: 16, fontWeight: FontWeight.bold)),
                       ],
                     ),
                   ),
                 );
-              })
+              }
+          )
         ],
       ),
     );

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:proyecto_reproductor_video/blocs/validacion_pagina_inicial/validacion_pagina_inicial_bloc.dart';
 import 'package:proyecto_reproductor_video/blocs/validation_bloc/validation_bloc.dart';
 import 'package:proyecto_reproductor_video/constants/rutas_de_paginas.dart';
-
-import '../../blocs/valida_pagina_inicial/validacion_pagina_inicial_bloc.dart';
 import '../../utils/functions_utils.dart';
 
 class ValidationUserPage extends StatefulWidget {
@@ -21,26 +20,34 @@ class _ValidationUserPageState extends State<ValidationUserPage> {
     final orientation = MediaQuery.of(context).orientation;
     final bool isVertical = orientation == Orientation.portrait;
     return Scaffold(
-      body: BlocConsumer<ValidacionPaginaInicialBloc, ValidacionPaginaInicialState>(
+      body: BlocConsumer<ValidacionPaginaInicialBloc,
+          ValidacionPaginaInicialState>(
         listener: (BuildContext _, ValidacionPaginaInicialState state) {
-          if(state.react == REACT_VALIDACION_PAGINA_INICIAL.success){
-             Navigator.pushNamedAndRemoveUntil(
-            context, panelinicial, (Route<dynamic> route) => false);
-          }
-          else{
-             showAlert(context, "Error", TYPE_ALERT.error);
+          print(state.react);
+          print(state.registrado);
+          if (state.react == REACT_VALIDACION_PAGINA_INICIAL.success) {
+            if (state.registrado!) {
+              Navigator.pushNamedAndRemoveUntil(
+                  context, panelinicial, (Route<dynamic> route) => false);
+            } else {
+              Navigator.pushNamedAndRemoveUntil(
+                  context, registro, (Route<dynamic> route) => false);
+            }
+          } else {
+            showAlert(context, "Error", TYPE_ALERT.error);
           }
         },
-        builder: (BuildContext _, ValidacionPaginaInicialState state) => !isUpdate
-            ? connectToBlocValidation(isVertical, context)
-            : Center(
-                child: Image(
-                  height: 1000,
-                  image: (isThemeModeLight(context)
-                      ? const AssetImage('assets/images/logo.jpg')
-                      : const AssetImage('assets/images/logo.jpg')),
-                ),
-              ),
+        builder: (BuildContext _, ValidacionPaginaInicialState state) =>
+            !isUpdate
+                ? connectToBlocValidation(isVertical, context)
+                : Center(
+                    child: Image(
+                      height: 1000,
+                      image: (isThemeModeLight(context)
+                          ? const AssetImage('assets/images/logo.jpg')
+                          : const AssetImage('assets/images/logo.jpg')),
+                    ),
+                  ),
       ),
     );
   }

@@ -7,7 +7,6 @@ import 'package:flutter/services.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:share_plus/share_plus.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 Future<File> createFileOfPdfUrl(String urlPath) async {
   final url = urlPath;
@@ -32,9 +31,9 @@ Future sharedFiles({
     if (isSave) {
       Directory documentDirectory = await getApplicationDocumentsDirectory();
       String documentPath = documentDirectory.path;
-      final String _path = '$documentPath/$name$ext';
+      final String path0 = '$documentPath/$name$ext';
       final RenderBox box = context.findRenderObject() as RenderBox;
-      Share.shareFiles([_path],
+      Share.shareFiles([path0],
         subject: name,
         text: 'Mi nuevo $name',
         sharePositionOrigin: box.localToGlobal(Offset.zero) & box.size);
@@ -135,38 +134,6 @@ enum TYPE_ALERT {
 String base64Encode(List<int> bytes) => base64.encode(bytes);
 
 Uint8List? base64Decode(String url) => base64.decode(url);
-
-Future openwhatsapp(BuildContext context, String numero, String mensaje) async {
-  var whatsapp = "+52" + numero;
-  var whatsappURlAndroid =
-    "whatsapp://send?phone=" + whatsapp + "&text=" + mensaje;
-  var whatappURLIos =
-    "https://wa.me/$whatsapp?text=${Uri.parse("${mensaje}")}";
-  if (Platform.isIOS) {
-    // for iOS phone only
-    if (await canLaunch(whatappURLIos)) {
-      await launch(whatappURLIos, forceSafariVC: false);
-    } else {
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("whatsapp no instalado")));
-    }
-  } else {
-    // android , web
-    if (await canLaunch(whatsappURlAndroid)) {
-      await launch(whatsappURlAndroid);
-    } else {
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("whatsapp no instalado")));
-    }
-  }
-}
-
-Future launchSocial(String url, String fallbackUrl) async {
-  try {
-    bool launched = await launch(url, forceSafariVC: false, forceWebView: false);
-    if (!launched) {await launch(fallbackUrl, forceSafariVC: false, forceWebView: false);}
-  } catch (e) {
-    await launch(fallbackUrl, forceSafariVC: false, forceWebView: false);
-  }
-}
 
 bool coincideCURPyRFC(String curp, String rfc) {
   String fechacurp;

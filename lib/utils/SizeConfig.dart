@@ -6,17 +6,17 @@ class SizeConfig {
   static late MediaQueryData _mediaQueryData;
   static double? screenWidth;
   static double? screenHeight;
-  static late double blockSizeHorizontal = 0;
-  static late double blockSizeVertical = 0;
+  static double blockSizeHorizontal = 0;
+  static double blockSizeVertical = 0;
 
-  static late double _safeAreaHorizontal = 0;
-  static late double _safeAreaVertical = 0;
+  static double _safeAreaHorizontal = 0;
+  static double _safeAreaVertical = 0;
   static double? safeBlockHorizontal;
   static double? safeBlockVertical;
 
-  static late bool isPortrait = false;
-  static late bool isLandscape = false;
-  static late bool isMobile = false;
+  static bool isPortrait = false;
+  static bool isLandscape = false;
+  static bool isMobile = false;
 
   void init(BuildContext context) {
     _mediaQueryData = MediaQuery.of(context);

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:proyecto_reproductor_video/pages/registro/registro_page.dart';
 import 'package:proyecto_reproductor_video/pages/videos_disponibles/videos_disponibles_page.dart';
 import 'package:proyecto_reproductor_video/pages/videos_pendientes/videos_pendientes_page.dart';
-import 'package:proyecto_reproductor_video/pages/videos_vistos/videos_vistos_page.dart';
 
 class PanelInicialPage extends StatefulWidget {
   const PanelInicialPage({super.key});
@@ -11,14 +11,16 @@ class PanelInicialPage extends StatefulWidget {
 }
 
 class _PanelInicialPageState extends State<PanelInicialPage> {
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
+        initialIndex: 1,
         length: 3,
         child: Scaffold(
           bottomNavigationBar: menu(),
           body: const TabBarView(
-            children: [VideosDisponoblesPage(), VideosPendientesPage(), VideosVistosPage()],
+            children: [ RegistroPage(), VideosDisponiblesPage(), VideosPendientesPage()],
           ),
         ),
       );
@@ -36,16 +38,16 @@ class _PanelInicialPageState extends State<PanelInicialPage> {
         
         tabs: [
           Tab(
+            text: "Inicio",
+            icon: Icon(Icons.home),
+          ),
+          Tab(
             text: "Todos los vídeos",
             icon: Icon(Icons.movie_filter_outlined),
           ),
           Tab(
-            text: "Vídeos Sin empezar",
+            text: "Avances",
             icon: Icon(Icons.movie_rounded),
-          ), 
-          Tab(
-            text: "Vídeos completados",
-            icon: Icon(Icons.movie_edit),
           ),
 
         ],

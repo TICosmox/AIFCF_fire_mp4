@@ -51,6 +51,7 @@ dependencies:
 
 dev_dependencies:
   flutter_launcher_icons: "^0.13.1"
+  flutter_lints: ^2.0.2
   flutter_test:
     sdk: flutter
 
@@ -85,7 +86,7 @@ flutter:
     - assets/i18n/
     - assets/images/
     - assets/icon/
-
+    - assets/videos/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

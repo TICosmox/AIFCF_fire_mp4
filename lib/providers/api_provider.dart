@@ -10,14 +10,14 @@ class ApiProvider {
   final localStorage = LocalStorage();
 
   Future postRequest(String uri, String ext, Map<String, dynamic> body) async {
-    final _url = uri + ext;
+    final url = uri + ext;
     final resp = await http.post(
-      Uri.parse(_url),
+      Uri.parse(url),
       //   HttpHeaders.authorizationHeader: 'Bearer ' + localStorage.userToken
       headers: {
         HttpHeaders.contentTypeHeader: 'application/json',
         'key': UriApi.key,
-        HttpHeaders.authorizationHeader: "Bearer " + localStorage.userToken
+        HttpHeaders.authorizationHeader: "Bearer ${localStorage.userToken}"
       },
       body: json.encode(body),
     );
@@ -36,13 +36,13 @@ class ApiProvider {
   }
 
   Future getRequest(String uri, String ext) async {
-    final _url = uri + ext;
+    final url = uri + ext;
     final resp = await http.get(
-      Uri.parse(_url),
+      Uri.parse(url),
       headers: {
         HttpHeaders.contentTypeHeader: 'application/json',
         'key': UriApi.key,
-        HttpHeaders.authorizationHeader: "Bearer " + localStorage.userToken
+        HttpHeaders.authorizationHeader: "Bearer ${localStorage.userToken}"
       },
     );
     final int statusCode = resp.statusCode;
@@ -55,12 +55,12 @@ class ApiProvider {
 
   Future getRequestWithParam(
       String url, String ext, Map<String, dynamic> model) async {
-    final _url = url + ext;
+    final url0 = url + ext;
     var headers = {
-      'Authorization': 'Bearer ' + localStorage.userToken,
+      'Authorization': 'Bearer ${localStorage.userToken}',
       'Content-Type': 'application/json'
     };
-    var request = http.Request('GET', Uri.parse(_url));
+    var request = http.Request('GET', Uri.parse(url0));
 
     request.body = json.encode(model);
     request.headers.addAll(headers);
@@ -71,9 +71,9 @@ class ApiProvider {
   }
 
   Future<int> deleteRequest(String uri, String ext) async {
-    final _url = uri + ext;
+    final url = uri + ext;
     final resp = await http.delete(
-      Uri.parse(_url),
+      Uri.parse(url),
       headers: {
         HttpHeaders.contentTypeHeader: 'application/json',
         HttpHeaders.authorizationHeader: localStorage.userToken
@@ -83,12 +83,12 @@ class ApiProvider {
   }
 
   Future putRequestCode(String url, String ext, Map? model) async {
-    final _url = url + ext;
+    final url0 = url + ext;
     var headers = {
-      'Authorization': 'Bearer ' + localStorage.userToken,
+      'Authorization': 'Bearer ${localStorage.userToken}',
       'Content-Type': 'application/json'
     };
-    var request = http.Request('PUT', Uri.parse(_url));
+    var request = http.Request('PUT', Uri.parse(url0));
 
     request.body = json.encode(model);
     request.headers.addAll(headers);
@@ -100,11 +100,11 @@ class ApiProvider {
 
   Future putRequest(String uri, String ext, Map body) async {
     print(localStorage.userToken);
-    final _url = uri + ext;
-    final resp = await http.put(Uri.parse(_url),
+    final url = uri + ext;
+    final resp = await http.put(Uri.parse(url),
         headers: {
           HttpHeaders.contentTypeHeader: 'application/json',
-          HttpHeaders.authorizationHeader: 'Bearer ' + localStorage.userToken
+          HttpHeaders.authorizationHeader: 'Bearer ${localStorage.userToken}'
         },
         body: json.encode(body));
     final int statusCode = resp.statusCode;

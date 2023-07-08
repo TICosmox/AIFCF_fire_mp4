@@ -7,3 +7,6 @@ const String videospendientes = 'videospendientes';
 const String detallevideo = 'detallevideo';
 const String reproductordevideo= 'reproductordevideo';
 const String video = 'video';
+const String detallesvideos = 'detallesvideo';
+const String registro = 'registro';
+const String reproductorvideo = 'reproductorvideo';

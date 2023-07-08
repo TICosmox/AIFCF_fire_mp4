@@ -34,30 +34,31 @@ class _VideosPendientesPage extends State<VideosPendientesPage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            padding: EdgeInsets.all(16),
-            child: Text(
+            padding: const EdgeInsets.all(16),
+            child: const Text(
               "Concluidos",
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
+              style: TextStyle( fontSize: 24, fontWeight: FontWeight.bold),
             ),
           ),
           // Horizontal list of featured content
-          Container(
+          SizedBox(
             height: 200,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: 10,
               itemBuilder: (context, index) {
                 return Container(
-                  margin: EdgeInsets.all(8),
+                  margin: const EdgeInsets.all(8),
                   width: 150,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    image: DecorationImage(
-                      image: AssetImage("assets/images/logo.jpg"),
-                      fit: BoxFit.cover,
+                  child: GestureDetector(
+                    onTap: () => Navigator.pushNamed(context, 'detallesvideo', arguments: 'nombrecurso'),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(8),
+                      child: const FadeInImage(
+                        placeholder: AssetImage("assets/images/logo.jpg"),
+                        image: NetworkImage('https://via.placeholder.com/100x100'),
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 );
@@ -65,55 +66,48 @@ class _VideosPendientesPage extends State<VideosPendientesPage> {
             ),
           ),
 
-          // Popular shows section
+          // Videos sin empezar
           Container(
-            padding: EdgeInsets.all(16),
-            child: Text(
-              'Sin Empezar',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+            padding: const EdgeInsets.all(16),
+            child: const Text('Sin Empezar', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
           ),
 
           GridView.builder(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 4,
-                childAspectRatio: 0.7,
-              ),
-              shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-              itemCount: 10,
-              itemBuilder: (context, index) {
-                return Container(
-                  margin: EdgeInsets.all(16),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Expanded(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 4,
+              childAspectRatio: 0.8,
+            ),
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: 10,
+
+            itemBuilder: (context, index) {
+              return Container(
+                margin: const EdgeInsets.all(16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: GestureDetector(
+                          onTap: () => Navigator.pushNamed(context, 'detallesvideo', arguments: 'nombrecurso'),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(10),
-                          child: Image.asset(
-                            "assets/images/logo.jpg",
-                            // popularShows[index].imageUrl,
-                            fit: BoxFit.cover,
+                          child: const FadeInImage(
+                            placeholder: AssetImage('assets/images/novideo.png'),
+                            image: NetworkImage('https://via.placeholder.com/200x200'),
+                            fit: BoxFit.cover, 
                           ),
                         ),
                       ),
-                      SizedBox(height: 8),
-                      Text(
-                        "Titulo del curso",
-                        // popularShows[index].title,
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
-                  ),
-                );
-              })
+                    ),
+                    const SizedBox(height: 5),
+                    const Text( "Titulo del curso", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                  ],
+                ),
+              );
+            }
+
+          )
         ],
       ),
     );

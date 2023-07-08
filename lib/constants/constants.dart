@@ -1,8 +1,8 @@
 
 class UriApi {
-  static String uriAA = 'https://tedamoslana.com.mx:9980/v1/';
-  static String uriCosmox = 'https://financialrs.azurewebsites.net/';
-  static String key = "cd94ee0e9f2da03671ff7a2ee907b366";
+  static String uriAA = '';
+  static String uriCosmox = '';
+  static String key = "";
 }
 
 class Native {
@@ -24,3 +24,6 @@ class Native {
   //   }
   // }
 }
+
+
+const String tituloAplicacion = 'Mercaverso';
