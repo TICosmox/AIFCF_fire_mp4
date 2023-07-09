@@ -1,4 +1,6 @@
+import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:video_player/video_player.dart';
 
 class VideoReproductorPage extends StatefulWidget {
@@ -10,67 +12,42 @@ class VideoReproductorPage extends StatefulWidget {
 }
 
 class _VideoReproductorPageState extends State<VideoReproductorPage> {
-  late VideoPlayerController _controller;
-  bool _estaReproduciendo = false;
+  late VideoPlayerController _videoPlayerController;
+  late ChewieController _chewieController;
+  bool _isFullScreen = false;
 
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.networkUrl(Uri.parse(widget.videoUrl))
-      ..initialize().then((value) {
-        setState(() {});
-      });
+    _videoPlayerController =
+        VideoPlayerController.networkUrl(Uri.parse(widget.videoUrl));
+    _chewieController = ChewieController(
+        videoPlayerController: _videoPlayerController,
+        autoPlay: true,
+        looping: true,
+        fullScreenByDefault: true);
   }
 
   @override
   void dispose() {
-    _controller.dispose();
+    _videoPlayerController.dispose();
+    _chewieController.dispose();
     super.dispose();
-  }
-
-  _botonReproducirPausar() {
-    setState(() {
-      _estaReproduciendo = !_estaReproduciendo;
-      if (_estaReproduciendo) {
-        _controller.play();
-      } else {
-        _controller.pause();
-      }
-    });
-  }
-
-  _seekTo(Duration duracion) {
-    setState(() {
-      _controller.seekTo(duracion);
-    });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        AspectRatio(
-          aspectRatio: _controller.value.aspectRatio,
-          child: VideoPlayer(_controller),
+    return WillPopScope(
+      onWillPop: () async {
+        Navigator.pop(context);
+        return true;
+      },
+      child: AspectRatio(
+        aspectRatio: _videoPlayerController.value.aspectRatio,
+        child: Chewie(
+          controller: _chewieController,
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            IconButton(
-                onPressed: _botonReproducirPausar,
-                icon:
-                    Icon(_estaReproduciendo ? Icons.pause : Icons.play_arrow)),
-            IconButton(
-                onPressed: () =>
-                    _seekTo(_controller.value.position - Duration(seconds: 10)),
-                icon: Icon(Icons.fast_rewind)),
-            IconButton(
-                onPressed: () =>
-                    _seekTo(_controller.value.position + Duration(seconds: 10)),
-                icon: Icon(Icons.forward))
-          ],
-        )
-      ],
+      ),
     );
   }
 }
