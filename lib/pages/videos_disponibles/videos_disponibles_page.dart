@@ -21,8 +21,8 @@ class _VideosDisponiblesPageState extends State<VideosDisponiblesPage> {
     var datos = json.decode(jsonResponse);
     setState(() {
       videos = datos["videos"];
+      print(videos);
     });
-    print(videos);
   }
 
   @override
@@ -66,8 +66,6 @@ class _VideosDisponiblesPageState extends State<VideosDisponiblesPage> {
             
             itemCount: videos.length,              
               itemBuilder: ( _ , index) {
-                print(videos[index]["nombreImagen"]);
-
                 return InkWell(
                   child: Container(
                     margin: const EdgeInsets.all(16),
@@ -76,13 +74,18 @@ class _VideosDisponiblesPageState extends State<VideosDisponiblesPage> {
                       children: [
                         Expanded(
                           child: GestureDetector(
-                            onTap: () => Navigator.pushNamed(context, 'detallesvideo', arguments: 'modelocurso'),
+                            onTap: () => Navigator.pushNamed(context, 'detallesvideo', arguments:{
+                              'video': videos[index]["video"],
+                              'nombreImagen': videos[index]["nombreImagen"],
+                              'descripcion': videos[index]["descripcion"],
+                              'ponente': videos[index]["ponente"],
+                            }),
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(10),
                               child: FadeInImage(
                                 placeholder: const AssetImage('assets/images/novideo.png'),
                                 // TODO validar si la imagen existe
-                                image: AssetImage('assets/images/snapshot/' + videos[index]["nombreImagen"]),
+                                image: AssetImage('assets/images/snapshot/${videos[index]["nombreImagen"]}'),
                                 fit: BoxFit.cover, 
                               ),
                             ),
