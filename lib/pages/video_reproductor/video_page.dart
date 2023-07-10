@@ -14,7 +14,7 @@ class VideoReproductorPage extends StatefulWidget {
 class _VideoReproductorPageState extends State<VideoReproductorPage> {
   late VideoPlayerController _videoPlayerController;
   late ChewieController _chewieController;
-  final bool _isFullScreen = false;
+  // final bool _isFullScreen = false;
 
   @override
   void initState() {

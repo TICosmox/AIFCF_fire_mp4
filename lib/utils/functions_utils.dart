@@ -68,10 +68,10 @@ String textTransform(String text) {
   var splitText = lower.split(' ');
   String newText = '';
 
-  splitText.forEach((element) {
+  for (var element in splitText) {
     var cap = element[0].toUpperCase();
-    newText = newText + cap + element.substring(1) + ' ';
-  });
+    newText = '$newText$cap${element.substring(1)} ';
+  }
   return newText;
 }
 

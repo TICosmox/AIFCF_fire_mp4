@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_reproductor_video/constants/rutas_de_paginas.dart';
-import 'package:proyecto_reproductor_video/pages/inicio/inicio_page.dart';
-import 'package:proyecto_reproductor_video/pages/validacion_pagina_inicial/validacion_pagina_inicial.dart';
 
 import 'package:proyecto_reproductor_video/pages/videos_disponibles/videos_disponibles_page.dart';
 import 'package:proyecto_reproductor_video/pages/videos_pendientes/videos_pendientes_page.dart';

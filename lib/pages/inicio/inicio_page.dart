@@ -23,7 +23,6 @@ class _InicioPageState extends State<InicioPage> {
     //var alumno = ModeloRegistro.fromJson(jsonResponse);
     nombre = alumno['nombrecompleto'];
     matricula = alumno['matricula'];
-    print( 'Hola, ${alumno['nombrecompleto']}!' );
   }
 
     @override
