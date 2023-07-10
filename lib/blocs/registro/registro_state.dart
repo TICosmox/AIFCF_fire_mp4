@@ -8,12 +8,8 @@ class RegistroState<T> {
       {this.react,
       this.data});
 
-  RegistroState<T> copyWith(RegistroState state,
-          {REACT_REGISTRO? react,
-          ModeloRegistro? data}) =>
-      RegistroState<T>(
-          react: react ?? state.react,
-          data: data ?? state.data);
+  RegistroState<T> copyWith(RegistroState state, {REACT_REGISTRO? react, ModeloRegistro? data}) =>
+    RegistroState<T>(react: react ?? state.react, data: data ?? state.data);
 }
 
 class Loading extends RegistroState<Loading> {}

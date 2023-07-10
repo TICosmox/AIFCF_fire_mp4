@@ -25,5 +25,4 @@ class Native {
   // }
 }
 
-
-const String tituloAplicacion = 'Mercaverso';
+const String tituloAplicacion = 'AIFCF Conocer';

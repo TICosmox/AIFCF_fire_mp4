@@ -37,7 +37,6 @@ void main() async {
   runApp(Phoenix(child: InitApp(blocInitialized: blocInitialize)));
 }
 
-
 class InitApp extends StatelessWidget {
   final List<BlocProvider>? blocInitialized;
 

@@ -1,7 +1,7 @@
-import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:video_player/video_player.dart';
+// ignore: depend_on_referenced_packages
+import 'package:chewie/chewie.dart';
 
 class VideoReproductorPage extends StatefulWidget {
   final String videoUrl;
@@ -14,13 +14,14 @@ class VideoReproductorPage extends StatefulWidget {
 class _VideoReproductorPageState extends State<VideoReproductorPage> {
   late VideoPlayerController _videoPlayerController;
   late ChewieController _chewieController;
-  bool _isFullScreen = false;
+  final bool _isFullScreen = false;
 
   @override
   void initState() {
     super.initState();
     _videoPlayerController =
-        VideoPlayerController.networkUrl(Uri.parse(widget.videoUrl));
+      VideoPlayerController.asset(widget.videoUrl);
+        //VideoPlayerController.networkUrl(Uri.parse(widget.videoUrl));
     _chewieController = ChewieController(
         videoPlayerController: _videoPlayerController,
         autoPlay: true,

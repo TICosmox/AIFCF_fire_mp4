@@ -4,9 +4,9 @@ import 'package:proyecto_reproductor_video/blocs/registro/registro_bloc.dart';
 import 'package:proyecto_reproductor_video/models/registro/registro_modelo.dart';
 import 'package:proyecto_reproductor_video/theme_config/input_decoration.dart';
 import 'package:proyecto_reproductor_video/utils/functions_utils.dart';
-import 'package:proyecto_reproductor_video/widgets/widgets.dart';
 
 import '../../constants/rutas_de_paginas.dart';
+import '../../widgets/widgets.dart';
 
 class RegistroPage extends StatefulWidget {
   const RegistroPage({super.key});
@@ -17,9 +17,8 @@ class RegistroPage extends StatefulWidget {
 
 class _RegistroPageState extends State<RegistroPage> {
   var nombreTextController = TextEditingController(text: '');
-  var matrculaTextController = TextEditingController(text: '');
+  var matriculaTextController = TextEditingController(text: '');
 
-  var passwordVisible = false;
   final _keyForm = GlobalKey<FormState>();
   bool cargando = false;
 
@@ -48,27 +47,16 @@ class _RegistroPageState extends State<RegistroPage> {
       }
     }, builder: (context, state) {
       return Scaffold(
-        appBar: AppBar(
-            title: Image.asset(
-              'assets/images/logo_aifcf.png',
-              fit: BoxFit.contain,
-              height: 60,
-            ),
-            bottom: const PreferredSize(
-              preferredSize: Size.fromHeight(20),
-              child: Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Text('Registro del alumno',
-                    style: TextStyle(color: Colors.white)),
-              ),
-            )),
+        
+        appBar: CustomAppbar(),
+
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 40),
             child: Form(
-                autovalidateMode: AutovalidateMode.onUserInteraction,
-                key: _keyForm,
-                child: body()),
+              autovalidateMode: AutovalidateMode.onUserInteraction,
+              key: _keyForm,
+              child: body()),
           ),
         ),
       );
@@ -78,10 +66,20 @@ class _RegistroPageState extends State<RegistroPage> {
   Widget body() {
     return Column(
       children: [
+        const Text(
+          'Registro de usuario',
+          style: TextStyle(
+            color: Color.fromARGB(255, 13, 71, 161),
+            height: 4,
+            fontSize: 34,
+          )
+        ),
+
         const SizedBox(height: 60),
         inputNombre(),
-        const SizedBox(height: 30),
+        const SizedBox(height: 24),
         inputMatricula(),
+        const SizedBox(height: 24),
         (!cargando) ? botonAceptar() : const Center(child: CircularProgressIndicator(),),
       ],
     );
@@ -92,15 +90,18 @@ class _RegistroPageState extends State<RegistroPage> {
       decoration: InputDecorations.boxDecoration(),
       margin: const EdgeInsets.only(bottom: 20),
       child: TextFormField(
-          controller: nombreTextController,
-          keyboardType: TextInputType.emailAddress,
-          decoration: InputDecorations.authLoginDecoration(
-              hintText: "Intoduzca su nombre completo",
-              labelText: "Nombre",
-              prefixIcon: Icons.email),
-          validator: (value) {
-            return (value != null) ? null : 'Introduzca campo';
-          }),
+        controller: nombreTextController,
+        keyboardType: TextInputType.name,
+        decoration: InputDecorations.authLoginDecoration(
+          hintText: "Intoduzca su nombre completo",
+          labelText: "Nombre",
+          prefixIcon: Icons.assignment_ind_outlined),
+        validator: (value) {
+          if (value==null || value.isEmpty){
+            return 'Por favor ingrese su nombre completo';
+          }
+          return null;
+        }),
     );
   }
 
@@ -109,42 +110,38 @@ class _RegistroPageState extends State<RegistroPage> {
       decoration: InputDecorations.boxDecoration(),
       margin: const EdgeInsets.only(bottom: 20),
       child: TextFormField(
-          controller: matrculaTextController,
-          keyboardType: TextInputType.emailAddress,
-          decoration: InputDecorations.authLoginDecoration(
-              hintText: "Matrícula",
-              labelText: "Ingrese su matrícula",
-              prefixIcon: Icons.email),
-          validator: (value) {
-            return (value != null) ? null : 'Introduzca campo';
-          }),
+        controller: matriculaTextController,
+        keyboardType: TextInputType.number,
+        decoration: InputDecorations.authLoginDecoration(
+          hintText: "Matrícula",
+          labelText: "Ingrese su matrícula",
+          prefixIcon: Icons.app_registration,),
+        validator: (value) {
+          if (value == null || value.isEmpty){
+            return 'Ingrese su matrícula';
+          }
+          return null;
+        }),
     );
   }
 
   Widget botonAceptar() {
     return ElevatedButton(
       child:
-          const SizedBox(width: 280, child: Center(child: Text('Registrar'))),
+        const SizedBox(width: 280, child: Center(child: Text('Registrar'))),
       onPressed: () {
         FocusScope.of(context).requestFocus(FocusNode());
         if (_keyForm.currentState!.validate()) {
           ModeloRegistro model = ModeloRegistro();
           model.nombrecompleto = nombreTextController.text;
-          model.matricula = matrculaTextController.text;
-          BlocProvider.of<RegistroBloc>(context)
-              .add(PostRegistro(model: model));
+          model.matricula = matriculaTextController.text;
+          BlocProvider.of<RegistroBloc>(context).add(PostRegistro(model: model));
         }
         // Guardar registro y deshabilitar registro
       },
     );
   }
 }
-
-
-
-
-
-
 
     //   final GlobalKey<FormState> miFormKey = GlobalKey<FormState>();
 

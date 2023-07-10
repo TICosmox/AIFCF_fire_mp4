@@ -6,8 +6,7 @@ class ReproductoPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final String parametro =
-        ModalRoute.of(context)!.settings.arguments as String;
+    final String parametro = ModalRoute.of(context)!.settings.arguments as String;
 
     return Scaffold(
       appBar: AppBar(title: const Text("Reprodutor de video")),

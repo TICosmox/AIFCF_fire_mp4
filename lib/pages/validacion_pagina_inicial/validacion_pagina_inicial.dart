@@ -19,35 +19,36 @@ class _ValidationUserPageState extends State<ValidationUserPage> {
   Widget build(BuildContext context) {
     final orientation = MediaQuery.of(context).orientation;
     final bool isVertical = orientation == Orientation.portrait;
+
     return Scaffold(
       body: BlocConsumer<ValidacionPaginaInicialBloc,
           ValidacionPaginaInicialState>(
         listener: (BuildContext _, ValidacionPaginaInicialState state) {
-          print(state.react);
-          print(state.registrado);
+          // print(state.react);
+          // print(state.registrado);
           if (state.react == REACT_VALIDACION_PAGINA_INICIAL.success) {
             if (state.registrado!) {
               Navigator.pushNamedAndRemoveUntil(
-                  context, panelinicial, (Route<dynamic> route) => false);
+                context, inicio, (Route<dynamic> route) => false);
             } else {
               Navigator.pushNamedAndRemoveUntil(
-                  context, registro, (Route<dynamic> route) => false);
+                context, registro, (Route<dynamic> route) => false);
             }
           } else {
             showAlert(context, "Error", TYPE_ALERT.error);
           }
         },
         builder: (BuildContext _, ValidacionPaginaInicialState state) =>
-            !isUpdate
-                ? connectToBlocValidation(isVertical, context)
-                : Center(
-                    child: Image(
-                      height: 1000,
-                      image: (isThemeModeLight(context)
-                          ? const AssetImage('assets/images/logo.jpg')
-                          : const AssetImage('assets/images/logo.jpg')),
-                    ),
-                  ),
+          !isUpdate
+            ? connectToBlocValidation(isVertical, context)
+            : Center(
+                child: Image(
+                  height: 1000,
+                  image: (isThemeModeLight(context)
+                    ? const AssetImage('assets/images/logo.jpg')
+                    : const AssetImage('assets/images/logo.jpg')),
+                ),
+              ),
       ),
     );
   }

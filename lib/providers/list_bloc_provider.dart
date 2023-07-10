@@ -13,7 +13,7 @@ Future<List<BlocProvider>> listBlocProvider() async {
     ),
 
      BlocProvider<RegistroBloc>(
-        create: (context) =>
-            RegistroBloc(LocalStorage())),
+      create: (context) => RegistroBloc(LocalStorage())
+    ),
   ];
 }
