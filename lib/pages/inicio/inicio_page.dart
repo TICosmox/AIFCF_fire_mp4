@@ -38,15 +38,15 @@ class _InicioPageState extends State<InicioPage> {
     return Scaffold(
       appBar: CustomAppbar(),
       drawer: const SideMenu(),
-        floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
-        floatingActionButton: FloatingActionButton(
-          backgroundColor: Colors.white,
-          tooltip: 'Ir a los videos',
-          onPressed: (){
-             Navigator.pushReplacementNamed(context, panelinicial);
-          },
-          child: const Icon(Icons.play_arrow, size: 40, color: Color.fromARGB(255, 13, 71, 161),),
-        ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.white,
+        tooltip: 'Ir a los videos',
+        onPressed: (){
+            Navigator.pushReplacementNamed(context, panelinicial);
+        },
+        child: const Icon(Icons.play_arrow, size: 40, color: Color.fromARGB(255, 13, 71, 161),),
+      ),
 
       body: ListView(
           padding: EdgeInsets.zero,
@@ -54,11 +54,10 @@ class _InicioPageState extends State<InicioPage> {
             buildTop(),
             Column(
               children: [
-                const SizedBox(height: 8),  
                 Text( nombre , style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold)),
                 const SizedBox(height: 8),
                 Text( matricula, style: const TextStyle(fontSize: 20, color: Colors.black)),
-                const SizedBox(height: 16),
+                const SizedBox(height: 8),
                 Container(
                   color: Colors.blue,
                   alignment: Alignment.center,
@@ -79,12 +78,27 @@ class _InicioPageState extends State<InicioPage> {
       clipBehavior: Clip.none,
       children:[
         Container(
-          margin: const EdgeInsets.only(top: 50, bottom: 50),
+          margin: const EdgeInsets.only(top: 40, bottom: 50),
           child: imagenCentral()),
         Positioned(
-        top: 320 - perfilHeight /2,
-        child: imagenPerfil()
-      ),
+          top: 305 - perfilHeight /2,
+          child: imagenPerfil()
+        ),
+        Positioned(
+          left: 850,
+          child: Container(
+            color: Colors.blue[100],
+            padding: const EdgeInsets.only(top: 180, bottom: 20),
+            //margin: EdgeInsets.all(10),
+            width: 300,
+            height: 220,
+            child: const LinearProgressIndicator(
+              value: 0.25,
+              backgroundColor: Colors.black45,
+              color: Color.fromARGB(255, 66, 159, 70),
+            ),
+          ),
+        )
       ],
     );
   }
@@ -97,9 +111,11 @@ Widget buildBienvenida() =>  RichText(
     children: [
       TextSpan(
         text: '''
-          Te damos la bienvenida al programa de capacitación remota "Nombre del programa" de la ACADEMIA INTERNACIONAL DE FORMACIÓN EN CIENCIAS FORENSES.
+          Te damos la bienvenida al programa de capacitación remota "Nombre del programa" de la ACADEMIA INTERNACIONAL DE FORMACIÓN EN CIENCIAS FORENSES (AIFCF).
 
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          El material didáctico proporcionado con esta aplicación, es propiedada única y exclusiva de AIFCF quien cuenta con los derechos de autor de la misma. AIFCF la pone a tu disposicón con el objetivo de preparate en técnicas forenses de acuerdo al convendio con tu institución. Descargar, distribuir y cualquier acción que implique visualizar este material fuera de esta aplicación NO está autorizado y representa una violación a las leyes correspondientes vigentes.
+
+          Vísitanos en http://www.academiaforense.edu.mx
           ''',
       ),
     ],    
@@ -114,7 +130,7 @@ Widget imagenCentral() => ClipRRect(
   ),
 );
 
-const double perfilHeight = 150;
+const double perfilHeight = 140;
 Widget imagenPerfil() => CircleAvatar(
   radius: perfilHeight / 4,
   backgroundColor: Colors.grey.shade800,

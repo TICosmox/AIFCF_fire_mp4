@@ -36,7 +36,7 @@ class SideMenu extends StatelessWidget {
             leading: const Icon(Icons.person_outline_outlined),
             title: const Text('Perfil'),
             onTap: () {
-              
+              Navigator.pushNamed(context, 'modificarregistro');
             }
           ),
 

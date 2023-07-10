@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_reproductor_video/pages/detalle_video/detalle_video_page.dart';
 import 'package:proyecto_reproductor_video/pages/inicio/inicio_page.dart';
+import 'package:proyecto_reproductor_video/pages/inicio/modificar_registro.dart';
 import 'package:proyecto_reproductor_video/pages/panel_inicial/panel_inicial.dart';
 import 'package:proyecto_reproductor_video/pages/registro/registro_page.dart';
 import 'package:proyecto_reproductor_video/pages/reproductor_video/reproductor_video_page.dart';
@@ -17,6 +18,7 @@ Map<String, WidgetBuilder> getApplicationRoutes() {
     detallesvideos: (BuildContext context) => const DetalleVideoPage(),
     detallevideo: (BuildContext context) => const DetalleVideoPage(),
     inicio: (BuildContext context) => const InicioPage(),
+    modificarregistro: (BuildContext context) => const ModificarRegistro(),
     panelinicial: (BuildContext context) => const PanelInicialPage(),
     registro: (BuildContext context) => const RegistroPage(),
     reproductordevideo: (BuildContext context) => const ReproductoPage(),

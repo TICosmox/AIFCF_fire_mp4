@@ -11,3 +11,4 @@ const String detallesvideos = 'detallesvideo';
 const String registro = 'registro';
 const String reproductorvideo = 'reproductorvideo';
 const String inicio = 'inicio';
+const String modificarregistro = 'modificarregistro';
