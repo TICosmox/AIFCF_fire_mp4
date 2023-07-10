@@ -14,10 +14,15 @@ class VideosDisponiblesPage extends StatefulWidget {
 
 class _VideosDisponiblesPageState extends State<VideosDisponiblesPage> {
 
-   loadJson() async{
-    String jsonString = await rootBundle.loadString('assets/data/bd.json');
-    var jsonResult = json.decode(jsonString);
-    print(jsonResult[1].titulo);
+  List videos = [];
+
+  loadJson() async{
+    String jsonResponse = await rootBundle.loadString('assets/data/bd.json');
+    var datos = json.decode(jsonResponse);
+    setState(() {
+      videos = datos["videos"];
+    });
+    print(videos);
   }
 
   @override
@@ -27,7 +32,6 @@ class _VideosDisponiblesPageState extends State<VideosDisponiblesPage> {
       loadJson();
     });
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -59,13 +63,12 @@ class _VideosDisponiblesPageState extends State<VideosDisponiblesPage> {
             ),
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
-            itemCount: 10,
-              
-              itemBuilder: (context, index) {
+            
+            itemCount: videos.length,              
+              itemBuilder: ( _ , index) {
+                print(videos[index]["nombreImagen"]);
+
                 return InkWell(
-                  onTap: () {
-                    Navigator.pushNamed(context, detallevideo);
-                  },
                   child: Container(
                     margin: const EdgeInsets.all(16),
                     child: Column(
@@ -76,19 +79,23 @@ class _VideosDisponiblesPageState extends State<VideosDisponiblesPage> {
                             onTap: () => Navigator.pushNamed(context, 'detallesvideo', arguments: 'modelocurso'),
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(10),
-                              child: const FadeInImage(
-                                placeholder: AssetImage('assets/images/novideo.png'),
-                                image: NetworkImage('https://via.placeholder.com/200x200'),
+                              child: FadeInImage(
+                                placeholder: const AssetImage('assets/images/novideo.png'),
+                                // TODO validar si la imagen existe
+                                image: AssetImage('assets/images/snapshot/' + videos[index]["nombreImagen"]),
                                 fit: BoxFit.cover, 
                               ),
                             ),
                           ),
                         ),
                         const SizedBox(height: 5),
-                        const Text( "Titulo del curso", style: TextStyle( fontSize: 16, fontWeight: FontWeight.bold)),
+                        Text( videos[index]["titulo"] , style: const TextStyle( fontSize: 16, fontWeight: FontWeight.bold)),
                       ],
                     ),
                   ),
+                  onTap: () {
+                    Navigator.pushNamed(context, detallevideo);
+                  },
                 );
               }
           )

@@ -1,45 +1,47 @@
-[   
-    {
-        "titulo": "Hola bienvenido",
-        "descripcion": "Aprenderas a leer",
-        "nombreImagen": "hola.jpg",
-        "duracion": "2:00:00",
-        "curso": "Curso de bienvenida.mp4",
-        "key": "hsdgfcyas"
-    },    
-    {
-        "titulo": "Reactivos Fluorescentes",
-        "descripcion": "El Licenciado Alfonso Gonzales Valencia, presentando el tema de Reactivos Flourescentes",
-        "ponente": "Alfonso Gonzales Valencia",
-        "nombreImagen": "reactivosfluorescentes.png",
-        "video": "reactivosfluorescentes.mp4",
-        "duracion": "1:00:00",
-        "key": "hsdgfcyas"
-    },
-    {
-        "titulo": "Juicios orales",
-        "descripcion": "El Licenciado Ian Ibsen Guadalupe Castañeda presentando el tema de Juicios Orales",
-        "ponente": "Ian Ibsen Guadalupe Castañeda",
-        "nombreImagen": "juciosorales.png",
-        "video": "juciosorales.mp4",
-        "duracion": "1:00:00",
-        "key": "hsdgfcyas"
-    },
-    {
-        "titulo": "Subjetivacion",
-        "descripcion": "El maestro Jesùs Moreno nos habla acerca de subjetivación",
-        "ponente": "Jesus Moreno",
-        "nombreImagen": "subjetivacion.png",
-        "video": "subjetivacion.mp4",
-        "duracion": "1:00:00",
-        "key": "hsdgfcyas"
-    },
-    {
-        "titulo": "Pruebas de sangre",
-        "descripcion": "Técnicas y recomendaciones para la identificación de sangre en campo utilizando la técnica Kastle-Meyer",
-        "ponente": "Carlos Carriedo Rico",
-        "nombreImagen": "pruebadesangre.png",
-        "video": "pruebadesangre.mp4",
-        "key": "hsdgfcyas"
-    }
-]
+{
+    "videos" :[   
+        {
+            "titulo": "Hola bienvenido",
+            "descripcion": "Aprenderas a leer",
+            "nombreImagen": "subjetivacion.png",
+            "duracion": "2:00:00",
+            "curso": "Curso de bienvenida.mp4",
+            "key": "hsdgfcyas"
+        },    
+        {
+            "titulo": "Reactivos Fluorescentes",
+            "descripcion": "El Licenciado Alfonso Gonzales Valencia, presentando el tema de Reactivos Flourescentes",
+            "ponente": "Alfonso Gonzales Valencia",
+            "nombreImagen": "reactivosfluorescentes.png",
+            "video": "reactivosfluorescentes.mp4",
+            "duracion": "1:00:00",
+            "key": "hsdgfcyas"
+        },
+        {
+            "titulo": "Juicios orales",
+            "descripcion": "El Licenciado Ian Ibsen Guadalupe Castañeda presentando el tema de Juicios Orales",
+            "ponente": "Ian Ibsen Guadalupe Castañeda",
+            "nombreImagen": "juciosorales.png",
+            "video": "juciosorales.mp4",
+            "duracion": "1:00:00",
+            "key": "hsdgfcyas"
+        },
+        {
+            "titulo": "Subjetivacion",
+            "descripcion": "El maestro Jesùs Moreno nos habla acerca de subjetivación",
+            "ponente": "Jesus Moreno",
+            "nombreImagen": "subjetivacion.png",
+            "video": "subjetivacion.mp4",
+            "duracion": "1:00:00",
+            "key": "hsdgfcyas"
+        },
+        {
+            "titulo": "Pruebas de sangre",
+            "descripcion": "Técnicas y recomendaciones para la identificación de sangre en campo utilizando la técnica Kastle-Meyer",
+            "ponente": "Carlos Carriedo Rico",
+            "nombreImagen": "pruebadesangre.png",
+            "video": "pruebadesangre.mp4",
+            "key": "hsdgfcyas"
+        }
+    ]
+}
