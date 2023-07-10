@@ -25,7 +25,7 @@ class _InicioPageState extends State<InicioPage> {
     matricula = alumno['matricula'];
   }
 
-    @override
+  @override
     void initState(){
     super.initState();
     setState(() {

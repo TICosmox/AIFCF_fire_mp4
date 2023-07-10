@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:proyecto_reproductor_video/constants/rutas_de_paginas.dart';
 import 'package:proyecto_reproductor_video/widgets/widgets.dart';
 
@@ -10,6 +13,22 @@ class VideosDisponiblesPage extends StatefulWidget {
 }
 
 class _VideosDisponiblesPageState extends State<VideosDisponiblesPage> {
+
+   loadJson() async{
+    String jsonString = await rootBundle.loadString('assets/data/bd.json');
+    var jsonResult = json.decode(jsonString);
+    print(jsonResult);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    setState(() {
+      loadJson();
+    });
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
