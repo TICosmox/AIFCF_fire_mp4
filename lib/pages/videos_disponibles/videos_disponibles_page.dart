@@ -17,7 +17,7 @@ class _VideosDisponiblesPageState extends State<VideosDisponiblesPage> {
    loadJson() async{
     String jsonString = await rootBundle.loadString('assets/data/bd.json');
     var jsonResult = json.decode(jsonString);
-    print(jsonResult);
+    print(jsonResult[1].titulo);
   }
 
   @override
