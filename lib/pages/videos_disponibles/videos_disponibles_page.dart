@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_reproductor_video/constants/rutas_de_paginas.dart';
+import 'package:proyecto_reproductor_video/widgets/widgets.dart';
 
 class VideosDisponiblesPage extends StatefulWidget {
   const VideosDisponiblesPage({super.key});
@@ -15,16 +16,7 @@ class _VideosDisponiblesPageState extends State<VideosDisponiblesPage> {
       backgroundColor: Colors.blue,
       extendBodyBehindAppBar: false,
       extendBody: true,
-      appBar: AppBar(
-        title: Image.asset(
-          'assets/images/logo_aifcf.png',
-          fit: BoxFit.contain,
-          height: 60,
-        ),
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        // actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.search))],
-      ),
+      appBar: CustomAppbar(),
       body: _body(),
     );
   }

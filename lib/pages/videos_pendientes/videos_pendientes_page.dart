@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proyecto_reproductor_video/widgets/widgets.dart';
 
 class VideosPendientesPage extends StatefulWidget {
   const VideosPendientesPage({super.key});
@@ -14,16 +15,7 @@ class _VideosPendientesPage extends State<VideosPendientesPage> {
       backgroundColor: Colors.blue,
       extendBodyBehindAppBar: false,
       extendBody: true,
-      appBar: AppBar(
-        title: Image.asset(
-          'assets/images/logo_aifcf.png',
-          fit: BoxFit.contain,
-          height: 60,
-        ),
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        // actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.search))],
-      ),
+      appBar: CustomAppbar(),
       body: _body(),
     );
   }
@@ -56,7 +48,7 @@ class _VideosPendientesPage extends State<VideosPendientesPage> {
                       borderRadius: BorderRadius.circular(8),
                       child: const FadeInImage(
                         placeholder: AssetImage("assets/images/logo.jpg"),
-                        image: NetworkImage('https://via.placeholder.com/100x100'),
+                        image: AssetImage('assets/images/snapshot/pruebadesangre.png'),
                         fit: BoxFit.cover,
                       ),
                     ),

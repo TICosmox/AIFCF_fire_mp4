@@ -8,6 +8,8 @@ class CustomAppbar extends AppBar{
       fit: BoxFit.contain,
       height: 60,
     ),
+    backgroundColor:  const Color(0xFF3F5AA6),
+    elevation: 0,
     bottom: const PreferredSize(
       preferredSize: Size.fromHeight(20),
       child: Padding(

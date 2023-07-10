@@ -10,9 +10,7 @@ class SideMenu extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
-
           const _DrawerHeader(),
-          
           ListTile(
             leading: const Icon(Icons.movie_filter_outlined),
             title: const Text('Mis cursos'),
@@ -20,7 +18,6 @@ class SideMenu extends StatelessWidget {
               Navigator.pushReplacementNamed(context, panelinicial);
             } 
           ),
-          
           ListTile(
             leading: const Icon(Icons.movie_rounded),
             title: const Text('Avances'),
@@ -28,7 +25,6 @@ class SideMenu extends StatelessWidget {
               Navigator.pushReplacementNamed(context, videospendientes);
             }
           ),
-
           ListTile(
             leading: const Icon(Icons.outbond_outlined),
             title: const Text('Exportar avances'),

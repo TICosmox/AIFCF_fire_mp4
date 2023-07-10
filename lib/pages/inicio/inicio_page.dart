@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:proyecto_reproductor_video/constants/rutas_de_paginas.dart';
 import 'package:proyecto_reproductor_video/providers/local_storage_provider.dart';
 import 'package:proyecto_reproductor_video/widgets/widgets.dart';
 
@@ -38,12 +39,20 @@ class _InicioPageState extends State<InicioPage> {
     return Scaffold(
       appBar: CustomAppbar(),
       drawer: const SideMenu(),
+        floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: Colors.white,
+          tooltip: 'Ir a los videos',
+          onPressed: (){
+             Navigator.pushReplacementNamed(context, panelinicial);
+          },
+          child: const Icon(Icons.play_arrow, size: 40, color: Color.fromARGB(255, 13, 71, 161),),
+        ),
 
       body: ListView(
           padding: EdgeInsets.zero,
           children: [
             buildTop(),
-
             Column(
               children: [
                 const SizedBox(height: 8),  
