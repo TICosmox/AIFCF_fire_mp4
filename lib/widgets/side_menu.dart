@@ -18,13 +18,13 @@ class SideMenu extends StatelessWidget {
               Navigator.pushReplacementNamed(context, panelinicial);
             } 
           ),
-          ListTile(
-            leading: const Icon(Icons.movie_rounded),
-            title: const Text('Avances'),
-            onTap: () {
-              Navigator.pushReplacementNamed(context, videospendientes);
-            }
-          ),
+          // ListTile(
+          //   leading: const Icon(Icons.movie_rounded),
+          //   title: const Text('Avances'),
+          //   onTap: () {
+          //     Navigator.pushReplacementNamed(context, videospendientes);
+          //   }
+          // ),
           ListTile(
             leading: const Icon(Icons.outbond_outlined),
             title: const Text('Exportar avances'),

@@ -32,6 +32,7 @@ class _PanelInicialPageState extends State<PanelInicialPage> {
           child: const Icon(Icons.home, size: 40, color: Color.fromARGB(255, 13, 71, 161),),
         ),
         body: const TabBarView(
+          physics: NeverScrollableScrollPhysics(),
           children: [VideosDisponiblesPage(), VideosPendientesPage()],
         ),
       ),
