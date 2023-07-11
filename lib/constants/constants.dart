@@ -26,3 +26,4 @@ class Native {
 }
 
 const String tituloAplicacion = 'AIFCF Conocer';
+const String tituloVacio = "No se encontro registro";

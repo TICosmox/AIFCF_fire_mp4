@@ -1,45 +1,53 @@
 // To parse this JSON data, do
 //
-//     final video = videoFromJson(jsonString);
+//     final modeloVideo = modeloVideoFromJson(jsonString);
 
 import 'dart:convert';
 
-Video videoFromJson(String str) => Video.fromJson(json.decode(str));
+List<ModeloVideo> modeloVideoFromJson(String str) => List<ModeloVideo>.from(json.decode(str).map((x) => ModeloVideo.fromJson(x)));
 
-String videoToJson(Video data) => json.encode(data.toJson());
+String modeloVideoToJson(List<ModeloVideo> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
-class Video {
+class ModeloVideo {
+    String? video;
     String? titulo;
     String? descripcion;
     String? nombreImagen;
     String? duracion;
     String? curso;
     String? key;
+    String? ponente;
 
-    Video({
+    ModeloVideo({
+        this.video,
         this.titulo,
         this.descripcion,
         this.nombreImagen,
         this.duracion,
         this.curso,
         this.key,
+        this.ponente,
     });
 
-    factory Video.fromJson(Map<String, dynamic> json) => Video(
+    factory ModeloVideo.fromJson(Map<String, dynamic> json) => ModeloVideo(
+        video: json["video"],
         titulo: json["titulo"],
         descripcion: json["descripcion"],
         nombreImagen: json["nombreImagen"],
         duracion: json["duracion"],
         curso: json["curso"],
         key: json["key"],
+        ponente: json["ponente"],
     );
 
     Map<String, dynamic> toJson() => {
+        "video": video,
         "titulo": titulo,
         "descripcion": descripcion,
         "nombreImagen": nombreImagen,
         "duracion": duracion,
         "curso": curso,
         "key": key,
+        "ponente": ponente,
     };
 }
