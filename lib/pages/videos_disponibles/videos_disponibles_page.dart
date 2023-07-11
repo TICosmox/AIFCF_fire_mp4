@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -20,7 +21,7 @@ class _VideosDisponiblesPageState extends State<VideosDisponiblesPage> {
     String jsonResponse = await rootBundle.loadString('assets/data/bd.json');
     var datos = json.decode(jsonResponse);
     setState(() {
-      videos = datos["videos"];
+      videos = datos;
       print(videos);
     });
   }
