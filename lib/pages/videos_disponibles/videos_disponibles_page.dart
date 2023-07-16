@@ -1,7 +1,5 @@
-import 'dart:convert';
 import 'dart:developer';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:proyecto_reproductor_video/blocs/videos_disponibles/videos_disponibles_bloc.dart';
 import 'package:proyecto_reproductor_video/constants/rutas_de_paginas.dart';
@@ -42,7 +40,7 @@ class _VideosDisponiblesPageState extends State<VideosDisponiblesPage> {
 
   Widget _carga(List<ModeloVideo> lista) {
     return Scaffold(
-      backgroundColor: Colors.blue,
+      //backgroundColor: Colors.blue,
       extendBodyBehindAppBar: false,
       extendBody: true,
       appBar: CustomAppbar(),
@@ -102,8 +100,7 @@ class _VideosDisponiblesPageState extends State<VideosDisponiblesPage> {
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(10),
                               child: FadeInImage(
-                                placeholder: const AssetImage(
-                                    'assets/images/novideo.png'),
+                                placeholder: const AssetImage( 'assets/images/novideo.png'),
                                 // TODO validar si la imagen existe
                                 image: AssetImage(
                                     'assets/images/snapshot/${videos[index].nombreImagen}'),

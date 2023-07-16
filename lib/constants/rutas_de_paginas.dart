@@ -18,5 +18,5 @@ const String modificarregistro = 'modificarregistro';
 //variables para configurar rutas externas
 
 const String rootSDCARD = 'inicio';
-const String carpetacontenedor = 'encriptado';
+const String carpetacontenedor = 'Android/data/com.example.proyecto_reproductor_video/files';
 const String nombrearchivo = 'bd.json';

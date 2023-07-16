@@ -12,7 +12,7 @@ class _VideosPendientesPage extends State<VideosPendientesPage> {
    @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
+      //backgroundColor: Colors.blue,
       extendBodyBehindAppBar: false,
       extendBody: true,
       appBar: CustomAppbar(),

@@ -15,6 +15,6 @@ Future<List<BlocProvider>> listBlocProvider() async {
     BlocProvider<RegistroBloc>(
         create: (context) => RegistroBloc(LocalStorage())),
     BlocProvider<VideosDisponiblesBloc>(
-        create: (context) => VideosDisponiblesBloc()),
+        create: (context) => VideosDisponiblesBloc(LocalStorage())),
   ];
 }
