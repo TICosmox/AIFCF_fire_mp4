@@ -55,7 +55,7 @@ class DetalleVideoPage extends StatelessWidget {
                           iconSize: 56,
                           tooltip: 'Reproducir',
                           onPressed: (){
-                            Navigator.pushNamed(context, reproductordevideo, arguments: "assets/videos/$video");
+                            Navigator.pushNamed(context, reproductordevideo, arguments: "/storage/4CFA-082A/encriptado/videob.mp4");
                           },
                         ),
                       ),

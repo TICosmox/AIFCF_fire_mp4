@@ -6,7 +6,7 @@ import 'package:chewie/chewie.dart';
 class VideoReproductorPage extends StatefulWidget {
   final String videoUrl;
   const VideoReproductorPage({super.key, required this.videoUrl});
-
+  
   @override
   State<VideoReproductorPage> createState() => _VideoReproductorPageState();
 }
