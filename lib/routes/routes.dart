@@ -4,7 +4,6 @@ import 'package:proyecto_reproductor_video/pages/inicio/inicio_page.dart';
 import 'package:proyecto_reproductor_video/pages/inicio/modificar_registro.dart';
 import 'package:proyecto_reproductor_video/pages/panel_inicial/panel_inicial.dart';
 import 'package:proyecto_reproductor_video/pages/registro/registro_page.dart';
-import 'package:proyecto_reproductor_video/pages/reproductor_video/reproductor_video_page.dart';
 import 'package:proyecto_reproductor_video/pages/validacion_pagina_inicial/validacion_pagina_inicial.dart';
 import 'package:proyecto_reproductor_video/pages/video_reproductor/reproductor_page.dart';
 import 'package:proyecto_reproductor_video/pages/videos_disponibles/videos_disponibles_page.dart';
@@ -22,7 +21,6 @@ Map<String, WidgetBuilder> getApplicationRoutes() {
     panelinicial: (BuildContext context) => const PanelInicialPage(),
     registro: (BuildContext context) => const RegistroPage(),
     reproductordevideo: (BuildContext context) => const ReproductoPage(),
-    reproductorvideo: (BuildContext context) =>  const ReproductorVideo(),
     validacioninicial: (BuildContext context) => const ValidationUserPage(),
     videosdisponibles: (BuildContext context) => const VideosDisponiblesPage(),
     videospendientes: (BuildContext context) => const VideosPendientesPage(),

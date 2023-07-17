@@ -9,10 +9,9 @@ class VideosPendientesPage extends StatefulWidget {
 }
 
 class _VideosPendientesPage extends State<VideosPendientesPage> {
-   @override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //backgroundColor: Colors.blue,
       extendBodyBehindAppBar: false,
       extendBody: true,
       appBar: CustomAppbar(),
@@ -27,10 +26,7 @@ class _VideosPendientesPage extends State<VideosPendientesPage> {
         children: [
           Container(
             padding: const EdgeInsets.all(16),
-            child: const Text(
-              "Concluidos",
-              style: TextStyle( fontSize: 24, fontWeight: FontWeight.bold),
-            ),
+            child: const Text( "Concluidos", style: TextStyle( fontSize: 20, fontWeight: FontWeight.bold) ),
           ),
           // Horizontal list of featured content
           SizedBox(

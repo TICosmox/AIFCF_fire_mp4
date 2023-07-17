@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:proyecto_reproductor_video/blocs/registro/registro_bloc.dart';
 import 'package:proyecto_reproductor_video/blocs/videos_disponibles/videos_disponibles_bloc.dart';
+import 'package:proyecto_reproductor_video/constants/rutas_de_paginas.dart';
 import 'package:proyecto_reproductor_video/models/registro/registro_modelo.dart';
 import 'package:proyecto_reproductor_video/theme_config/input_decoration.dart';
 import 'package:proyecto_reproductor_video/utils/functions_utils.dart';
-
-import '../../constants/rutas_de_paginas.dart';
-import '../../widgets/widgets.dart';
+import 'package:proyecto_reproductor_video/widgets/widgets.dart';
 
 class RegistroPage extends StatefulWidget {
   const RegistroPage({super.key});

@@ -1,10 +1,9 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:proyecto_reproductor_video/constants/rutas_de_paginas.dart';
 import 'package:proyecto_reproductor_video/models/catalogo/catalgo.model.dart';
 import 'package:proyecto_reproductor_video/providers/local_storage_provider.dart';
-
-import '../../constants/rutas_de_paginas.dart';
 
 class DetalleVideoPage extends StatelessWidget {
   const DetalleVideoPage({super.key});
@@ -14,11 +13,6 @@ class DetalleVideoPage extends StatelessWidget {
     ModeloVideo arguments = ModalRoute.of(context)!.settings.arguments as ModeloVideo;
     final path = Directory("${LocalStorage().nombreSD}/$carpetacontenedor/${arguments.nombreImagen}");
     File imagen = File(path.path);
-    // var video =  arguments['video'];
-    // var nombreImagen = arguments["nombreImagen"];
-    // var descripcion = arguments["descripcion"];
-    // var ponente = arguments["ponente"];
-    print(arguments);
 
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -29,7 +23,7 @@ class DetalleVideoPage extends StatelessWidget {
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        title: Text('descripcion'),
+        title: Text( arguments.titulo!),
         centerTitle: true,
       ),
       
