@@ -57,40 +57,36 @@ class _VideosDisponiblesPageState extends State<VideosDisponiblesPage> {
           GridView.builder(
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 4,
-              childAspectRatio: .8,
+              childAspectRatio: 1,
             ),
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             itemCount: videos.length,
             itemBuilder: ( _, index) {
-              return InkWell(
+              return InkWell(                
                 child: Container(
-                  margin: const EdgeInsets.all(8),
+                  margin: const EdgeInsets.all(4),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Expanded(
-                        child: GestureDetector(
-                          onTap: (){
-                            if(videos[index].video == null || videos[index].duracion == null ){
-                              showAlert(context, tituloVacio, TYPE_ALERT.error);
-                              return;
-                            }
-                            Navigator.pushNamed( context, detallesvideos, arguments: videos[index] );
-                          } ,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(10),
-                            child: FadeInImage(
-                              placeholder: const AssetImage( 'assets/images/novideo.png'),
-                              // TODO validar si la imagen existe
-                              image: AssetImage( 'assets/images/snapshot/${videos[index].nombreImagen}'),
-                              fit: BoxFit.fitWidth,
-                            ),
-                          ),
+                      GestureDetector(
+                        onTap: (){
+                          if(videos[index].video == null || videos[index].duracion == null ){
+                            showAlert(context, tituloVacio, TYPE_ALERT.error);
+                            return;
+                          }
+                          Navigator.pushNamed( context, detallesvideos, arguments: videos[index] );
+                        } ,
+                        child: FadeInImage(
+                          placeholder: const AssetImage( 'assets/images/film.gif'),
+                          image: AssetImage( 'assets/images/snapshot/${videos[index].nombreImagen}'),
+                          fit: BoxFit.fitWidth,
                         ),
                       ),
                       const SizedBox(height: 5),
-                      Text(videos[index].titulo!, style: const TextStyle( fontSize: 16, fontWeight: FontWeight.bold)),
+                      Text(videos[index].titulo!,
+                        style: const TextStyle( fontSize: 14, fontWeight: FontWeight.bold),
+                        overflow: TextOverflow.ellipsis),
                     ],
                   ),
                 ),
