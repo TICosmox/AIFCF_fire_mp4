@@ -1,4 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:proyecto_reproductor_video/constants/rutas_de_paginas.dart';
+import 'package:proyecto_reproductor_video/providers/local_storage_provider.dart';
 import 'package:video_player/video_player.dart';
 // ignore: depend_on_referenced_packages
 import 'package:chewie/chewie.dart';
@@ -18,9 +22,13 @@ class _VideoReproductorPageState extends State<VideoReproductorPage> {
 
   @override
   void initState() {
+
     super.initState();
+    final path = Directory("${LocalStorage().nombreSD}/$carpetacontenedor/${widget.videoUrl}");
+    
+    File archivo = File(path.path);
     _videoPlayerController =
-      VideoPlayerController.asset(widget.videoUrl);
+      VideoPlayerController.file(archivo);
         //VideoPlayerController.networkUrl(Uri.parse(widget.videoUrl));
     _chewieController = ChewieController(
         videoPlayerController: _videoPlayerController,

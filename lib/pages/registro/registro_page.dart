@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:proyecto_reproductor_video/blocs/registro/registro_bloc.dart';
+import 'package:proyecto_reproductor_video/blocs/videos_disponibles/videos_disponibles_bloc.dart';
 import 'package:proyecto_reproductor_video/models/registro/registro_modelo.dart';
 import 'package:proyecto_reproductor_video/theme_config/input_decoration.dart';
 import 'package:proyecto_reproductor_video/utils/functions_utils.dart';
@@ -36,8 +37,10 @@ class _RegistroPageState extends State<RegistroPage> {
           cargando = false;
         });
         showAlert(context, "Registro correcto", TYPE_ALERT.success);
+        BlocProvider.of<VideosDisponiblesBloc>(context)
+          .add(GetVideosDisponibles());
         Navigator.pushNamedAndRemoveUntil(
-            context, panelinicial, (Route<dynamic> route) => false);
+          context, panelinicial, (Route<dynamic> route) => false);
       }
       if (state.react == REACT_REGISTRO.error) {
          setState(() {

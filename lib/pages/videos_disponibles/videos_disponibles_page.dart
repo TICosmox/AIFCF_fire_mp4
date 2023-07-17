@@ -80,18 +80,15 @@ class _VideosDisponiblesPageState extends State<VideosDisponiblesPage> {
                         Expanded(
                           child: GestureDetector(
                             onTap: (){
-                              if(videos[index].video == null){
+                              print(videos[index]);
+                              if(videos[index].video == null || videos[index].duracion == null ){
                                 showAlert(context, tituloVacio, TYPE_ALERT.error);
                                 return;
                               }
                               Navigator.pushNamed(
                                 context, detallesvideos,
-                                arguments: {
-                                  'video': videos[index].video,
-                                  'nombreImagen': videos[index].nombreImagen,
-                                  'descripcion': videos[index].descripcion,
-                                  'ponente': videos[index].ponente,
-                                });
+                                arguments: videos[index]
+                              );
                             }
                             
                             

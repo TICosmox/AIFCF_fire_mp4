@@ -13,8 +13,6 @@ const String reproductorvideo = 'reproductorvideo';
 const String inicio = 'inicio';
 const String modificarregistro = 'modificarregistro';
 
-
-
 //variables para configurar rutas externas
 
 const String rootSDCARD = 'inicio';

@@ -14,7 +14,6 @@ class ModeloVideo {
     String? descripcion;
     String? nombreImagen;
     String? duracion;
-    String? curso;
     String? key;
     String? ponente;
 
@@ -24,7 +23,6 @@ class ModeloVideo {
         this.descripcion,
         this.nombreImagen,
         this.duracion,
-        this.curso,
         this.key,
         this.ponente,
     });
@@ -35,7 +33,6 @@ class ModeloVideo {
         descripcion: json["descripcion"],
         nombreImagen: json["nombreImagen"],
         duracion: json["duracion"],
-        curso: json["curso"],
         key: json["key"],
         ponente: json["ponente"],
     );
@@ -46,7 +43,6 @@ class ModeloVideo {
         "descripcion": descripcion,
         "nombreImagen": nombreImagen,
         "duracion": duracion,
-        "curso": curso,
         "key": key,
         "ponente": ponente,
     };

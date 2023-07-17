@@ -1,18 +1,23 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:proyecto_reproductor_video/models/catalogo/catalgo.model.dart';
+import 'package:proyecto_reproductor_video/providers/local_storage_provider.dart';
 
 import '../../constants/rutas_de_paginas.dart';
 
 class DetalleVideoPage extends StatelessWidget {
   const DetalleVideoPage({super.key});
-
   @override
   Widget build(BuildContext context) {
 
-    final arguments = ModalRoute.of(context)!.settings.arguments  as Map;
-    var video =  arguments['video'];
-    var nombreImagen = arguments["nombreImagen"];
-    var descripcion = arguments["descripcion"];
-    var ponente = arguments["ponente"];
+    ModeloVideo arguments = ModalRoute.of(context)!.settings.arguments as ModeloVideo;
+    final path = Directory("${LocalStorage().nombreSD}/$carpetacontenedor/${arguments.nombreImagen}");
+    File imagen = File(path.path);
+    // var video =  arguments['video'];
+    // var nombreImagen = arguments["nombreImagen"];
+    // var descripcion = arguments["descripcion"];
+    // var ponente = arguments["ponente"];
     print(arguments);
 
     return Scaffold(
@@ -24,7 +29,7 @@ class DetalleVideoPage extends StatelessWidget {
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        title: Text(descripcion),
+        title: Text('descripcion'),
         centerTitle: true,
       ),
       
@@ -35,7 +40,9 @@ class DetalleVideoPage extends StatelessWidget {
             SizedBox(
               height: 500,
               width: double.infinity,
-              child: Image.asset('assets/images/snapshot/$nombreImagen',fit: BoxFit.cover),
+              child: Image.file(imagen ,fit: BoxFit.cover),
+              //child: Image.asset('assets/images/snapshot/${arguments.nombreImagen}',fit: BoxFit.cover),
+              //final path = Directory("${LocalStorage().nombreSD}/$carpetacontenedor/${widget.videoUrl}");
             ),
             Padding(
               padding: const EdgeInsets.all(16),
@@ -55,7 +62,7 @@ class DetalleVideoPage extends StatelessWidget {
                           iconSize: 56,
                           tooltip: 'Reproducir',
                           onPressed: (){
-                            Navigator.pushNamed(context, reproductordevideo, arguments: "/storage/4CFA-082A/encriptado/videob.mp4");
+                            Navigator.pushNamed(context, reproductordevideo, arguments: arguments.video);
                           },
                         ),
                       ),
@@ -77,9 +84,9 @@ class DetalleVideoPage extends StatelessWidget {
 
                   const Text( "Descripción", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold) ),
                   const SizedBox(height: 8),
-                  Text(  descripcion , style: const TextStyle(fontSize: 16) ),
+                  Text(  arguments.descripcion!, style: const TextStyle(fontSize: 16) ),
                   const SizedBox(height: 16),
-                  Text( ponente, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                  Text( arguments.ponente!, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
                   const SizedBox(height: 8),
                   const Text('Maestro',style: TextStyle(fontSize: 16))
                 ],
