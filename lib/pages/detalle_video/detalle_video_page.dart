@@ -34,7 +34,7 @@ class DetalleVideoPage extends StatelessWidget {
             SizedBox(
               height: 500,
               width: double.infinity,
-              child: Image.file(imagen ,fit: BoxFit.cover),
+              child: Image.file(imagen, fit: BoxFit.cover),
               //child: Image.asset('assets/images/snapshot/${arguments.nombreImagen}',fit: BoxFit.cover),
               //final path = Directory("${LocalStorage().nombreSD}/$carpetacontenedor/${widget.videoUrl}");
             ),

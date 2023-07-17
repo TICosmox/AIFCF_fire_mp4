@@ -20,27 +20,21 @@ class ConfigPaths {
   }
   
   Future<String?> leerArchivoJSONdesdeSDCARD(String nombreSD) async {
-  final path = Directory("$nombreSD/$carpetacontenedor/$nombrearchivo");
-
-  File file = File(path.path);
-  if (await file.exists()) {
-    try {
-      String jsonString = await file.readAsString();
-      return jsonString;
-    } catch (e) {
+    final path = Directory("$nombreSD/$carpetacontenedor/$nombrearchivo");
+    File file = File(path.path);
+    if (await file.exists()) {
+      try {
+        String jsonString = await file.readAsString();
+        return jsonString;
+      } catch (e) {
+        return null;
+      }
+    } else {
       return null;
     }
-  } else {
-    print('No se encontró nada');
-    return null;
   }
-}
-
-
 
 }
-
-
 
 class Native {
   // static Future<String> pathDownload() async {
@@ -61,8 +55,6 @@ class Native {
   //   }
   // }
 }
-
-class FuncionalidadesAndroid {}
 
 const String tituloAplicacion = 'AIFCF Conocer';
 const String tituloVacio = "No se encontro registro";

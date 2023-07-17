@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_reproductor_video/constants/rutas_de_paginas.dart';
-
 import 'package:proyecto_reproductor_video/pages/videos_disponibles/videos_disponibles_page.dart';
 import 'package:proyecto_reproductor_video/pages/videos_pendientes/videos_pendientes_page.dart';
 
@@ -24,9 +23,7 @@ class _PanelInicialPageState extends State<PanelInicialPage> {
         floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.white,
           tooltip: 'Ir a Inicio',
-          onPressed: (){
-            Navigator.pushReplacementNamed(context, inicio);
-          },
+          onPressed: (){ Navigator.pushReplacementNamed(context, inicio); },
           child: const Icon(Icons.home, size: 40, color: Color.fromARGB(255, 13, 71, 161),),
         ),
         body: const TabBarView(
