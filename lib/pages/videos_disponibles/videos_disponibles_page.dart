@@ -39,7 +39,7 @@ class _VideosDisponiblesPageState extends State<VideosDisponiblesPage> {
     return Scaffold(
       extendBodyBehindAppBar: false,
       extendBody: true,
-      appBar: CustomAppbar(),
+      appBar: CustomAppbar('Bienvenidos'),
       body: _body(lista),
     );
   }

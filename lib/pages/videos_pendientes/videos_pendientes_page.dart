@@ -14,7 +14,7 @@ class _VideosPendientesPage extends State<VideosPendientesPage> {
     return Scaffold(
       extendBodyBehindAppBar: false,
       extendBody: true,
-      appBar: CustomAppbar(),
+      appBar: CustomAppbar('Tus avances'),
       body: _body(),
     );
   }

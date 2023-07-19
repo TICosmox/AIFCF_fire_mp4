@@ -16,10 +16,9 @@ class DetalleVideoPage extends StatelessWidget {
     File imagen = File(path.path);
 
     return Scaffold(
-      appBar: CustomAppbar(),
+      appBar: CustomAppbar('Información del video'),
       body: SingleChildScrollView(
         child: Column(
-          //crossAxisAlignment: CrossAxisAlignment.start,
           children: [        
             Stack(
               alignment: Alignment.bottomCenter,
@@ -50,7 +49,7 @@ class DetalleVideoPage extends StatelessWidget {
                   const SizedBox(height: 8),
                   Text( arguments.ponente!, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic)),
                   const SizedBox(height: 40),
-                  Text( 'Todos los derechos reservados', style: const TextStyle(fontStyle: FontStyle.italic, fontSize: 9)) 
+                  const Text( 'Todos los derechos reservados', style: TextStyle(fontStyle: FontStyle.italic, fontSize: 9)) 
                 ],
               ),
             )

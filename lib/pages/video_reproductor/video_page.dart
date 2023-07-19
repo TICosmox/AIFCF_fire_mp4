@@ -33,8 +33,8 @@ class _VideoReproductorPageState extends State<VideoReproductorPage> {
     _chewieController = ChewieController(
         videoPlayerController: _videoPlayerController,
         autoPlay: true,
-        looping: true,
-        fullScreenByDefault: true);
+        looping: false,
+        fullScreenByDefault: false);
   }
 
   @override

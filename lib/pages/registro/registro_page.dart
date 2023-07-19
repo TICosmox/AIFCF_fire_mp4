@@ -50,7 +50,7 @@ class _RegistroPageState extends State<RegistroPage> {
     }, builder: (context, state) {
       return Scaffold(
         
-        appBar: CustomAppbar(),
+        appBar: CustomAppbar('Registro de usuario'),
 
         body: SingleChildScrollView(
           child: Padding(
